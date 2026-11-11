@@ -418,26 +418,6 @@ Expected compilation output:
 
 ---
 
-## 🎬 2-Minute Hackathon Demo Script for Presenters
-
-Follow this sequence for the ultimate high-scoring demo pitch:
-
-1. **The Hook (0:00 - 0:25)**:
-   * Show a news headline: *"Homeowner loses \$4,000 upfront deposit to contractor who vanished."*
-   * Pitch: *"This is a \$500 Billion crisis. Homeowners don't trust contractors with upfront deposits, and contractors don't trust homeowners to pay after completing jobs. Meet ProofPay: AI-inspected milestone escrow powered by PayPal."*
-2. **The Escrow Deposit (0:25 - 0:55)**:
-   * Open the Marketplace: Show an active job (*"Main 200A Electrical Panel Upgrade — \$1,200"*).
-   * Click **"Authorize Escrow Deposit with PayPal"**. Show the PayPal modal locking the \$1,200 into a secure `AUTHORIZE` hold. The funds are protected in the vault.
-3. **The Contractor & AI Vision Scan (0:55 - 1:30)**:
-   * Switch to Contractor View: The electrician snaps a photo of the completed electrical panel.
-   * Click **"Run AI Inspection"**. Watch Claude Sonnet 4.5 analyze the photo in real-time, highlight breakers, check wire gauges, and verify **NEC Article 408.4** and **NEC 250.50**.
-   * The compliance score dials to **94% (Certified Pass)**, generating a green tamper-evident certificate!
-4. **The Payout Execution (1:30 - 2:00)**:
-   * Switch back to Homeowner View: The homeowner sees the verified pass and clicks **"Release Escrow Payout"**.
-   * ProofPay immediately calls PayPal **`CAPTURE`**, funds are disbursed to the contractor’s wallet, and a live PayPal confirmation transaction receipt is displayed!
-
----
-
 ## 📄 License & Open-Source Integrity
 This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for complete details.  
 All repository code, documentation, and architecture blueprints were developed for the **PayPal AI Hackathon 2026** and are 100% publicly auditable.
