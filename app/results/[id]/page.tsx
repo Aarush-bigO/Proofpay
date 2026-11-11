@@ -143,16 +143,17 @@ export default function ResultsPage() {
   }, [id]);
 
   // Check if this is a before/after analysis
+  const fixData = analysis?.fixAnalysis as any;
   const isBeforeAfter =
-    analysis?.fixAnalysis?.mode === "before_after" &&
+    fixData?.mode === "before_after" &&
     analysis?.photoUrl &&
     analysis?.fixedPhotoUrl;
 
   // Extract violation markers from the before/after result
   const violationMarkers =
-    isBeforeAfter && analysis?.fixAnalysis?.violations_found
+    isBeforeAfter && fixData?.violations_found
       ? (
-          analysis.fixAnalysis.violations_found as {
+          fixData.violations_found as {
             id: number;
             description: string;
             code_section: string;
@@ -313,10 +314,10 @@ export default function ResultsPage() {
     );
   }
 
-  const beforeScore = analysis.fixAnalysis?.before_score;
+  const beforeScore = fixData?.before_score;
   const afterScore =
-    analysis.fixAnalysis?.after_score || analysis.complianceScore;
-  const resolvedItems = analysis.fixAnalysis?.resolved_items || [];
+    fixData?.after_score || analysis.complianceScore;
+  const resolvedItems = fixData?.resolved_items || [];
 
   // ── Before/After results view ──
   if (isBeforeAfter) {
@@ -533,7 +534,7 @@ export default function ResultsPage() {
     overallAssessment: analysis.overallAssessment,
   };
 
-  const hasExistingFix = analysis.fixAnalysis && analysis.fixedPhotoUrl;
+  const hasExistingFix = Boolean(analysis.fixAnalysis && analysis.fixedPhotoUrl);
   const beforeImageForDisplay = (analysis.revisionHistory?.length ?? 0) > 0
     ? analysis.revisionHistory![analysis.revisionHistory!.length - 1]!.fixedPhotoUrl
     : analysis.photoUrl;
