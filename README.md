@@ -74,41 +74,41 @@ The following architecture diagram illustrates how ProofPay bridges client-side 
 
 ```mermaid
 flowchart TB
-    subgraph Client["Client-Side Layer (Next.js 16 + React 19)"]
-        HOMEOWNER["Homeowner Portal<br/>(Job Creation & Escrow Deposit)"]
-        CONTRACTOR["Contractor Portal<br/>(Job Discovery & Proof Upload)"]
-        DASHBOARD["Executive Cockpit<br/>(Escrow Ledger & Recharts Analytics)"]
+    subgraph Client["Client-Side Layer - Next.js 16 and React 19"]
+        HOMEOWNER["Homeowner Portal<br/>Job Creation and Escrow Deposit"]
+        CONTRACTOR["Contractor Portal<br/>Job Discovery and Proof Upload"]
+        DASHBOARD["Executive Cockpit<br/>Escrow Ledger and Analytics"]
     end
 
-    subgraph CoreEngine["ProofPay Application Core (:3000)"]
-        ROUTER["Next.js App Router & Server Actions"]
-        STORAGE["Resilient Storage Engine<br/>(LocalStorage + Session Vault)"]
-        AUDIT["Cryptographic Audit Trail<br/>(Dossier & Recheck Hash)"]
+    subgraph CoreEngine["ProofPay Application Core"]
+        ROUTER["Next.js App Router and Server Actions"]
+        STORAGE["Resilient Storage Engine<br/>LocalStorage and Session Vault"]
+        AUDIT["Cryptographic Audit Trail<br/>Dossier and Recheck Hash"]
     end
 
-    subgraph PayPalRails["PayPal FinTech Platform (Sandbox / Production)"]
-        PP_AUTH["PayPal Orders v2<br/>intent: AUTHORIZE<br/>(Funds Locked in Escrow)"]
-        PP_CAPTURE["PayPal Payments v2<br/>authorizations/{id}/capture<br/>(Instant Contractor Payout)"]
-        PP_VOID["PayPal Payments v2<br/>authorizations/{id}/void<br/>(Homeowner Refund Hold)"]
+    subgraph PayPalRails["PayPal FinTech Platform - Sandbox and Production"]
+        PP_AUTH["PayPal Orders v2<br/>intent: AUTHORIZE<br/>Funds Locked in Escrow"]
+        PP_CAPTURE["PayPal Payments v2<br/>authorizations/id/capture<br/>Instant Contractor Payout"]
+        PP_VOID["PayPal Payments v2<br/>authorizations/id/void<br/>Homeowner Refund Hold"]
     end
 
-    subgraph AIEngine["Multimodal AI Vision & Code Reasoning"]
-        CLAUDE["Claude Sonnet 4.5 Vision<br/>(Base64 Image Analysis)"]
-        NEC_DB[("NEC Code Knowledge Base<br/>(17+ Standards & California Amendments)")]
-        COMPLIANCE["Compliance Scoring Engine<br/>(Severity Weighting & Remediation)"]
+    subgraph AIEngine["Multimodal AI Vision and Code Reasoning"]
+        CLAUDE["Claude Sonnet 4.5 Vision<br/>Base64 Image Analysis"]
+        NEC_DB[("NEC Code Knowledge Base<br/>17+ Standards and California Rules")]
+        COMPLIANCE["Compliance Scoring Engine<br/>Severity Weighting and Remediation"]
     end
 
-    HOMEOWNER -->|1. Book Job & Deposit| ROUTER
+    HOMEOWNER -->|1. Book Job and Deposit| ROUTER
     ROUTER -->|2. Create Authorization Hold| PP_AUTH
-    PP_AUTH -.->|Hold Confirmed (Auth ID)| STORAGE
+    PP_AUTH -.->|Hold Confirmed - Auth ID| STORAGE
     
     CONTRACTOR -->|3. Upload Job Photos| ROUTER
     ROUTER -->|4. Dispatch High-Res Frame| CLAUDE
-    CLAUDE <-->|5. Cross-Check Citations| NEC_DB
-    CLAUDE -->|6. Structured Violations & Score| COMPLIANCE
+    CLAUDE ---|5. Cross-Check Citations| NEC_DB
+    CLAUDE -->|6. Structured Violations and Score| COMPLIANCE
     COMPLIANCE -->|7. Verification Certificate| AUDIT
     
-    AUDIT -->|8. Score >= 80% Unlocks Release| HOMEOWNER
+    AUDIT -->|8. Score 80%+ Unlocks Release| HOMEOWNER
     HOMEOWNER -->|9. 1-Click Approval| ROUTER
     ROUTER -->|10. Execute Capture| PP_CAPTURE
     PP_CAPTURE -->|11. Disburse Funds| CONTRACTOR
@@ -125,14 +125,14 @@ Every ProofPay job flows through a strictly deterministic finite state machine (
 
 ```mermaid
 stateDiagram-v2
-    [*] --> JobCreated: Homeowner posts job & budget
+    [*] --> JobCreated: Homeowner posts job and budget
     
-    JobCreated --> Matched: Contractor applies & homeowner accepts quote
+    JobCreated --> Matched: Contractor applies and homeowner accepts quote
     
     Matched --> EscrowHeld: Homeowner deposits into PayPal Hold
     note right of EscrowHeld
         PayPal Orders v2
-        intent: "AUTHORIZE"
+        intent: AUTHORIZE
         Funds held safely in escrow
     end note
     
@@ -148,27 +148,27 @@ stateDiagram-v2
         SeverityScoring --> [*]
     }
     
-    AIEvaluation --> ViolationsDetected: Score < 80% or Critical Alert
-    AIEvaluation --> CompliancePassed: Score >= 80% & Zero Critical Alerts
+    AIEvaluation --> ViolationsDetected: Score Below 80% or Critical Alert
+    AIEvaluation --> CompliancePassed: Score 80% or Above with Zero Criticals
     
-    ViolationsDetected --> RecheckSubmitted: Contractor fixes violation & re-submits photo
+    ViolationsDetected --> RecheckSubmitted: Contractor fixes violation and re-submits
     RecheckSubmitted --> AIEvaluation: Side-by-side Before/After analysis
     
-    ViolationsDetected --> EscrowVoided: Violations unaddressed / Contractor cancels
+    ViolationsDetected --> EscrowVoided: Violations unaddressed or job canceled
     note right of EscrowVoided
         PayPal Payments v2
-        /authorizations/{id}/void
+        authorizations/id/void
         Funds returned to Homeowner
     end note
     
     CompliancePassed --> MilestoneCaptured: Homeowner 1-Click Release
     note right of MilestoneCaptured
         PayPal Payments v2
-        /authorizations/{id}/capture
+        authorizations/id/capture
         Instant payout to Contractor
     end note
     
-    MilestoneCaptured --> Completed: Certificate & PayPal Txn Stored
+    MilestoneCaptured --> Completed: Certificate and PayPal Txn Stored
     EscrowVoided --> [*]
     Completed --> [*]
 ```
@@ -189,32 +189,32 @@ sequenceDiagram
     participant AI as Claude Sonnet 4.5 Vision
     actor C as Contractor (Bob)
 
-    H->>UI: Selects Job ("Main Panel Upgrade", $1,200)
-    UI->>API: POST /api/escrow/authorize ($1,200 USD)
-    API->>PP: POST /v2/checkout/orders (intent: AUTHORIZE)
-    PP-->>API: 201 Created (Order ID: 8X7749204)
+    H->>UI: Selects Job: Main Panel Upgrade ($1,200)
+    UI->>API: POST /api/escrow/authorize - $1,200 USD
+    API->>PP: POST /v2/checkout/orders with intent: AUTHORIZE
+    PP-->>API: 201 Created - Order ID: 8X7749204
     API-->>UI: Launch PayPal Checkout Modal
     H->>PP: Approves $1,200 Escrow Deposit
     PP-->>API: WEBHOOK: CHECKOUT.ORDER.APPROVED
     API->>PP: POST /v2/checkout/orders/8X7749204/authorize
-    PP-->>API: 201 Authorized (Auth ID: 5TY889021)
-    API-->>UI: Escrow Status: HELD (Funds Protected)
+    PP-->>API: 201 Authorized - Auth ID: 5TY889021
+    API-->>UI: Escrow Status: HELD - Funds Protected
     
     Note over C,UI: Contractor completes wiring on-site
     C->>UI: Uploads Photo of Completed Panel
-    UI->>API: POST /api/analyze (Base64 Image + Jurisdiction: CA)
-    API->>AI: Analyze image against NEC 2023 & Title 24
-    Note over AI: Latency: 2.1s | 0 Hallucinations
+    UI->>API: POST /api/analyze with Panel Image
+    API->>AI: Analyze image against NEC 2023 and Title 24
+    Note over AI: Latency: 2.1s, Zero Hallucinations
     AI-->>API: JSON: Score 92%, 0 Criticals, Verified NEC 408.4
     API-->>UI: Render Glowing Green Verification Certificate
     
-    UI-->>H: Push Notification: "AI Inspection Passed (92%)"
-    H->>UI: Clicks "Release Escrow Payout"
-    UI->>API: POST /api/escrow/capture (Auth ID: 5TY889021)
+    UI-->>H: Push Notification: AI Inspection Passed (92%)
+    H->>UI: Clicks Release Escrow Payout
+    UI->>API: POST /api/escrow/capture - Auth ID: 5TY889021
     API->>PP: POST /v2/payments/authorizations/5TY889021/capture
-    PP-->>API: 201 Captured (Capture ID: 9LP332014, Status: COMPLETED)
-    API-->>UI: Render Live Receipt & Proof Dossier
-    UI-->>C: SMS/Email: "$1,200 Deposited in PayPal Balance"
+    PP-->>API: 201 Captured - Capture ID: 9LP332014
+    API-->>UI: Render Live Receipt and Proof Dossier
+    UI-->>C: SMS/Email: $1,200 Deposited in PayPal Balance
 ```
 
 ---
@@ -226,21 +226,21 @@ ProofPay eliminates subjective payment disputes by compiling deterministic **Evi
 ```mermaid
 flowchart LR
     subgraph EvidenceInput["Evidence Input Layer"]
-        PHOTO_ORIG["Original Work Photo<br/>(EXIF & Timestamped)"]
-        PHOTO_FIX["Corrected Photo<br/>(Side-by-Side Delta)"]
-        CITATION["Exact NEC Code Section<br/>(e.g., NEC 408.4 Labeling)"]
+        PHOTO_ORIG["Original Work Photo<br/>EXIF and Timestamped"]
+        PHOTO_FIX["Corrected Photo<br/>Side-by-Side Delta"]
+        CITATION["Exact NEC Code Section<br/>NEC 408.4 Labeling"]
     end
 
     subgraph ProofEngine["ProofPay Cryptographic Integrity Core"]
-        HASH["SHA-256 Image Hash<br/>(Tamper-Proof Ledger)"]
-        DIFF["Visual Difference Mapping<br/>(Pixel & Bounding-Box Overlay)"]
-        VERIFY["Deterministic Policy Guard<br/>(Score >= 80% Rule)"]
+        HASH["SHA-256 Image Hash<br/>Tamper-Proof Ledger"]
+        DIFF["Visual Difference Mapping<br/>Pixel and Bounding-Box Overlay"]
+        VERIFY["Deterministic Policy Guard<br/>Score 80%+ Rule"]
     end
 
     subgraph DefenseOutput["PayPal Dispute Defense Output"]
-        CERT["Cryptographic PDF Certificate<br/>(Tamper-Evident Signatures)"]
-        DOSSIER["PayPal Disputes API Dossier<br/>(Instant Resolution Evidence)"]
-        LEDGER["Chain-of-Custody Log<br/>(Auth ID -> Capture ID)"]
+        CERT["Cryptographic PDF Certificate<br/>Tamper-Evident Signatures"]
+        DOSSIER["PayPal Disputes API Dossier<br/>Instant Resolution Evidence"]
+        LEDGER["Chain-of-Custody Log<br/>Auth ID to Capture ID"]
     end
 
     PHOTO_ORIG --> HASH
