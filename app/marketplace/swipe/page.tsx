@@ -102,6 +102,11 @@ const HOUSE_IMAGES = [
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
   "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
   "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&h=600&fit=crop",
 ];
 const PANEL_IMAGES = [
   "https://images.unsplash.com/photo-1621905251189-08b45d6e5e0e?w=300&h=200&fit=crop",
@@ -116,6 +121,14 @@ const WORKER_AVATARS = [
   "/avatars/worker-4.jpg",
   "/avatars/worker-5.jpg",
   "/avatars/worker-6.jpg",
+  "/avatars/worker-7.jpg",
+  "/avatars/worker-8.jpg",
+  "/avatars/worker-9.jpg",
+  "/avatars/worker-10.jpg",
+  "/avatars/worker-11.jpg",
+  "/avatars/worker-12.jpg",
+  "/avatars/worker-13.jpg",
+  "/avatars/worker-14.jpg",
 ];
 function pickImage(id: string, urls: string[]): string {
   const hash = id.split("").reduce((a, c) => a + c.charCodeAt(0), 0);

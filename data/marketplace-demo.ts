@@ -6,13 +6,13 @@ import type {
 } from "@/lib/marketplace-storage";
 
 // ---------------------------------------------------------------------------
-// 6 Demo Workers — Indian licensed electricians & contractors
+// 6 Demo Workers — Indian licensed electricians & contractors (All Unique Names & Photos)
 // ---------------------------------------------------------------------------
 
 export const DEMO_WORKERS: MarketplaceWorker[] = [
   {
     id: "worker-maria-santos",
-    name: "Sunita Sharma",
+    name: "Sunita Deshmukh",
     avatarUrl: "/avatars/worker-2.jpg",
     type: "freelancer",
     license: "KA-ELC-78234",
@@ -57,8 +57,8 @@ export const DEMO_WORKERS: MarketplaceWorker[] = [
   },
   {
     id: "worker-priya-patel",
-    name: "Priya Patel",
-    avatarUrl: "/avatars/worker-5.jpg",
+    name: "Priya Natarajan",
+    avatarUrl: "/avatars/worker-3.jpg",
     type: "agency",
     license: "KA-ELC-65890",
     insurance: "HDFC ERGO Commercial GL",
@@ -101,7 +101,7 @@ export const DEMO_WORKERS: MarketplaceWorker[] = [
   {
     id: "worker-sarah-kim",
     name: "Shweta Kulkarni",
-    avatarUrl: "/avatars/worker-3.jpg",
+    avatarUrl: "/avatars/worker-9.jpg",
     type: "agency",
     license: "KA-ELC-54321",
     insurance: "ICICI Lombard Commercial",
@@ -143,36 +143,36 @@ export const DEMO_WORKERS: MarketplaceWorker[] = [
     bio: "Specialist in modern residential electrification — Level 2 EV chargers, smart IoT panel monitoring, and energy-efficient LED automation. Clean inspection history with BESCOM.",
     createdAt: "2025-07-12T08:00:00Z",
   },
-  // ---- More workers for swiping ----
-  worker("worker-alex-nguyen", "Arjun Nair", "freelancer", 78, 92, "Indiranagar, Bengaluru, KA", ["Panel Upgrades", "Rewiring", "Outlet Install"], "Licensed journeyman. 3-phase distribution boards and residential rewires are my specialty. Clean permit history."),
-  worker("worker-jessica-wright", "Jyoti Verma", "freelancer", 62, 86, "Koramangala, Bengaluru, KA", ["Lighting", "Outlet Install", "Troubleshooting"], "Residential electrical specialist. Great with heritage homes, apartments, and diagnosing tricky tripping circuits."),
-  worker("worker-andre-costa", "Anand Deshmukh", "agency", 105, 97, "Whitefield, Bengaluru, KA", ["Panel Upgrades", "EV Charger Install", "Solar", "Rewiring"], "Experienced crew for high-demand residential and villa electrical. Solar + EV + heavy DB installations. Licensed & insured."),
-  worker("worker-maya-johnson", "Maya Jha", "freelancer", 55, 79, "HSR Layout, Bengaluru, KA", ["Outlet Install", "Lighting", "Troubleshooting"], "Third-year apprentice. Careful, code-focused, and building strong proof-of-work on ProofPay."),
-  worker("worker-ryan-o-brien", "Rohan Oberoi", "freelancer", 88, 94, "Bandra West, Mumbai, MH", ["Panel Upgrades", "EV Charger Install", "Smart Home"], "Master electrical contractor. EV fast wallbox and smart DB certified. High-end residential & commercial."),
-  worker("worker-yuki-tanaka", "Yashvardhan Tiwari", "freelancer", 70, 89, "Powai, Mumbai, MH", ["Rewiring", "Outlet Install", "Lighting"], "Apartment rewires, modular kitchen circuits, and decorative architectural lighting. Always on time."),
-  worker("worker-carlos-mendez", "Chetan Mehta", "agency", 95, 96, "Andheri West, Mumbai, MH", ["Panel Upgrades", "Rewiring", "Troubleshooting", "Outlet Install"], "Family business with 15 years experience across Western Mumbai. Handling heavy load connections to full rewiring."),
-  worker("worker-hannah-baker", "Harini Bhat", "freelancer", 58, 84, "Indiranagar, Bengaluru, KA", ["Outlet Install", "Lighting", "Smart Home"], "Smart home automation and architectural lighting. Certified smart dimmer and sensor installer."),
-  worker("worker-tyler-james", "Tarun Jain", "freelancer", 72, 87, "Hitec City, Hyderabad, TS", ["EV Charger Install", "Panel Upgrades", "Outlet Install"], "EV charging station specialist for residential villas and gated communities. Authorized test reports provided."),
-  worker("worker-lisa-chen", "Lavanya Choudhury", "freelancer", 68, 90, "Gachibowli, Hyderabad, TS", ["Troubleshooting", "Rewiring", "Outlet Install"], "Diagnostic master. I identify neutral leaks, earth resistance faults, and fix them right the first time."),
-  worker("worker-marcus-hall", "Madhav Hegde", "agency", 100, 95, "Malleshwaram, Bengaluru, KA", ["Panel Upgrades", "Rewiring", "Commercial", "Outlet Install"], "Commercial and villa electrification. Distribution boards, tenant load sanctions, and preventative maintenance."),
-  worker("worker-olivia-martin", "Oishi Mukherjee", "freelancer", 52, 76, "Salt Lake, Kolkata, WB", ["Outlet Install", "Lighting", "Troubleshooting"], "Apprentice electrician. Highly detail-oriented, eager to deliver flawless residential installations."),
-  worker("worker-daniel-kim", "Deepak Kapoor", "freelancer", 82, 93, "DLF Phase 5, Gurugram, HR", ["Panel Upgrades", "EV Charger Install", "Smart Home", "Lighting"], "Full-service modern residential electrical. High-amperage boards, EV chargers, and automated smart panels."),
-  worker("worker-ashley-rodriguez", "Ananya Roy", "freelancer", 65, 85, "Koramangala, Bengaluru, KA", ["Rewiring", "Outlet Install", "Panel Upgrades"], "Older independent houses and heritage bungalows are my passion. Safe rewires and modern breaker upgrades."),
-  worker("worker-brandon-scott", "Bhavin Shah", "freelancer", 74, 88, "Navrangpura, Ahmedabad, GJ", ["EV Charger Install", "Outlet Install", "Troubleshooting"], "EV charging and modern distribution setups. Fast, certified, and tidy installation."),
-  worker("worker-natalie-white", "Nandita Wadhwa", "agency", 98, 97, "South Extension, New Delhi, DL", ["Panel Upgrades", "Rewiring", "EV Charger Install", "Solar"], "Premium residential and commercial contractor across Delhi NCR. Fully licensed and certified engineering team."),
-  worker("worker-ethan-clark", "Eshaan Chakraborty", "freelancer", 60, 82, "Park Street, Kolkata, WB", ["Lighting", "Outlet Install", "Smart Home"], "Lighting layout and execution. Architectural fixtures, concealed LED coves, and smart scene controllers."),
-  worker("worker-victoria-lee", "Vandana Lal", "freelancer", 76, 91, "Vasant Vihar, New Delhi, DL", ["Panel Upgrades", "Rewiring", "Outlet Install"], "Licensed journeyman. Complete distribution upgrades and whole-villa rewiring compliant with modern codes."),
-  worker("worker-noah-adams", "Nikhil Agarwal", "freelancer", 48, 71, "Kothrud, Pune, MH", ["Outlet Install", "Lighting", "Troubleshooting"], "Apprentice with strong safety fundamentals. Honest, transparent, and fair pricing for residential tasks."),
-  worker("worker-chloe-brown", "Charu Bisht", "freelancer", 80, 94, "Kalyani Nagar, Pune, MH", ["EV Charger Install", "Panel Upgrades", "Smart Home"], "EV charger and modern distribution specialist. Authorized installer for leading EV wallboxes."),
-  worker("worker-lucas-garcia", "Lalit Goyal", "agency", 90, 92, "Connaught Place, New Delhi, DL", ["Rewiring", "Panel Upgrades", "Outlet Install", "Troubleshooting"], "Commercial and residential contractor. Service renewals, submetering, and emergency troubleshooting."),
-  worker("worker-zoey-taylor", "Zara Tyagi", "freelancer", 66, 83, "Sector 62, Noida, UP", ["Outlet Install", "Lighting", "EV Charger Install"], "Residential electrical specialist. Safe modular switchboards, dedicated appliance wiring, and Level 2 EV points."),
-  worker("worker-henry-wilson", "Harsh Vardhan", "freelancer", 84, 95, "Sadashivanagar, Bengaluru, KA", ["Panel Upgrades", "Rewiring", "EV Charger Install", "Troubleshooting"], "Master electrician. Complex multi-storey villa rewires and heavy distribution overhauls. Clear communication."),
-  worker("worker-ava-martinez", "Aadhya Mishra", "freelancer", 56, 78, "Bellandur, Bengaluru, KA", ["Outlet Install", "Lighting"], "Apprentice electrician. Reliable, prompt, and strictly adhering to RCCB and grounding standards."),
-  worker("worker-sebastian-lopez", "Sanjay Lodha", "agency", 102, 98, "Koregaon Park, Pune, MH", ["Panel Upgrades", "Rewiring", "Commercial", "EV Charger Install"], "Complete turnkey electrical engineering. Luxury apartments to mid-size commercial offices."),
-  worker("worker-ella-anderson", "Ekta Awasthi", "freelancer", 64, 86, "Banjara Hills, Hyderabad, TS", ["Troubleshooting", "Outlet Install", "Lighting"], "Diagnostic specialist. Quick detection of phase imbalances, voltage drops, and earth leakages."),
-  worker("worker-jackson-thomas", "Jitendra Tiwari", "freelancer", 69, 84, "Vashi, Navi Mumbai, MH", ["Panel Upgrades", "Outlet Install", "EV Charger Install"], "Distribution upgrades and EV charging infrastructure. Punctual, neat, and compliant with DISCOM norms."),
-  worker("worker-grace-harris", "Gauri Hegde", "freelancer", 77, 90, "Rajajinagar, Bengaluru, KA", ["Rewiring", "Panel Upgrades", "Outlet Install"], "Independent house rewires and panel swaps. No shortcuts, premium copper materials, and verified safety tests."),
-  worker("worker-benjamin-young", "Bharat Yadav", "freelancer", 73, 88, "Civil Lines, Jaipur, RJ", ["EV Charger Install", "Smart Home", "Outlet Install"], "Smart home integration, Wi-Fi relays, and EV chargers. Making residential power intelligent and safe."),
+  // ---- 29 More Unique Workers for Directory & Swiping ----
+  worker("worker-alex-nguyen", "Arjun Nair", "freelancer", 78, 92, "Indiranagar, Bengaluru, KA", ["Panel Upgrades", "Rewiring", "Outlet Install"], "Licensed journeyman. 3-phase distribution boards and residential rewires are my specialty. Clean permit history.", 1),
+  worker("worker-jessica-wright", "Jyoti Sengupta", "freelancer", 62, 86, "Koramangala, Bengaluru, KA", ["Lighting", "Outlet Install", "Troubleshooting"], "Residential electrical specialist. Great with heritage homes, apartments, and diagnosing tricky tripping circuits.", 11),
+  worker("worker-andre-costa", "Anand Mahapatra", "agency", 105, 97, "Whitefield, Bengaluru, KA", ["Panel Upgrades", "EV Charger Install", "Solar", "Rewiring"], "Experienced crew for high-demand residential and villa electrical. Solar + EV + heavy DB installations. Licensed & insured.", 10),
+  worker("worker-maya-johnson", "Maya Jha", "freelancer", 55, 79, "HSR Layout, Bengaluru, KA", ["Outlet Install", "Lighting", "Troubleshooting"], "Third-year apprentice. Careful, code-focused, and building strong proof-of-work on ProofPay.", 5),
+  worker("worker-ryan-o-brien", "Rohan Oberoi", "freelancer", 88, 94, "Bandra West, Mumbai, MH", ["Panel Upgrades", "EV Charger Install", "Smart Home"], "Master electrical contractor. EV fast wallbox and smart DB certified. High-end residential & commercial.", 12),
+  worker("worker-yuki-tanaka", "Yashvardhan Tiwari", "freelancer", 70, 89, "Powai, Mumbai, MH", ["Rewiring", "Outlet Install", "Lighting"], "Apartment rewires, modular kitchen circuits, and decorative architectural lighting. Always on time.", 4),
+  worker("worker-carlos-mendez", "Chetan Mehta", "agency", 95, 96, "Andheri West, Mumbai, MH", ["Panel Upgrades", "Rewiring", "Troubleshooting", "Outlet Install"], "Family business with 15 years experience across Western Mumbai. Handling heavy load connections to full rewiring.", 14),
+  worker("worker-hannah-baker", "Harini Bhat", "freelancer", 58, 84, "Indiranagar, Bengaluru, KA", ["Outlet Install", "Lighting", "Smart Home"], "Smart home automation and architectural lighting. Certified smart dimmer and sensor installer.", 9),
+  worker("worker-tyler-james", "Tarun Jain", "freelancer", 72, 87, "Hitec City, Hyderabad, TS", ["EV Charger Install", "Panel Upgrades", "Outlet Install"], "EV charging station specialist for residential villas and gated communities. Authorized test reports provided.", 6),
+  worker("worker-lisa-chen", "Lavanya Choudhury", "freelancer", 68, 90, "Gachibowli, Hyderabad, TS", ["Troubleshooting", "Rewiring", "Outlet Install"], "Diagnostic master. I identify neutral leaks, earth resistance faults, and fix them right the first time.", 3),
+  worker("worker-marcus-hall", "Madhav Hegde", "agency", 100, 95, "Malleshwaram, Bengaluru, KA", ["Panel Upgrades", "Rewiring", "Commercial", "Outlet Install"], "Commercial and villa electrification. Distribution boards, tenant load sanctions, and preventative maintenance.", 4),
+  worker("worker-olivia-martin", "Oishi Mukherjee", "freelancer", 52, 76, "Salt Lake, Kolkata, WB", ["Outlet Install", "Lighting", "Troubleshooting"], "Apprentice electrician. Highly detail-oriented, eager to deliver flawless residential installations.", 11),
+  worker("worker-daniel-kim", "Deepak Kapoor", "freelancer", 82, 93, "DLF Phase 5, Gurugram, HR", ["Panel Upgrades", "EV Charger Install", "Smart Home", "Lighting"], "Full-service modern residential electrical. High-amperage boards, EV chargers, and automated smart panels.", 2),
+  worker("worker-ashley-rodriguez", "Ananya Roy", "freelancer", 65, 85, "Koramangala, Bengaluru, KA", ["Rewiring", "Outlet Install", "Panel Upgrades"], "Older independent houses and heritage bungalows are my passion. Safe rewires and modern breaker upgrades.", 13),
+  worker("worker-brandon-scott", "Bhavin Shah", "freelancer", 74, 88, "Navrangpura, Ahmedabad, GJ", ["EV Charger Install", "Outlet Install", "Troubleshooting"], "EV charging and modern distribution setups. Fast, certified, and tidy installation.", 6),
+  worker("worker-natalie-white", "Nandita Wadhwa", "agency", 98, 97, "South Extension, New Delhi, DL", ["Panel Upgrades", "Rewiring", "EV Charger Install", "Solar"], "Premium residential and commercial contractor across Delhi NCR. Fully licensed and certified engineering team.", 13),
+  worker("worker-ethan-clark", "Eshaan Chakraborty", "freelancer", 60, 82, "Park Street, Kolkata, WB", ["Lighting", "Outlet Install", "Smart Home"], "Lighting layout and execution. Architectural fixtures, concealed LED coves, and smart scene controllers.", 12),
+  worker("worker-victoria-lee", "Vandana Lal", "freelancer", 76, 91, "Vasant Vihar, New Delhi, DL", ["Panel Upgrades", "Rewiring", "Outlet Install"], "Licensed journeyman. Complete distribution upgrades and whole-villa rewiring compliant with modern codes.", 5),
+  worker("worker-noah-adams", "Nikhil Agarwal", "freelancer", 48, 71, "Kothrud, Pune, MH", ["Outlet Install", "Lighting", "Troubleshooting"], "Apprentice with strong safety fundamentals. Honest, transparent, and fair pricing for residential tasks.", 2),
+  worker("worker-chloe-brown", "Charu Bisht", "freelancer", 80, 94, "Kalyani Nagar, Pune, MH", ["EV Charger Install", "Panel Upgrades", "Smart Home"], "EV charger and modern distribution specialist. Authorized installer for leading EV wallboxes.", 11),
+  worker("worker-lucas-garcia", "Lalit Goyal", "agency", 90, 92, "Connaught Place, New Delhi, DL", ["Rewiring", "Panel Upgrades", "Outlet Install", "Troubleshooting"], "Commercial and residential contractor. Service renewals, submetering, and emergency troubleshooting.", 10),
+  worker("worker-zoey-taylor", "Zara Tyagi", "freelancer", 66, 83, "Sector 62, Noida, UP", ["Outlet Install", "Lighting", "EV Charger Install"], "Residential electrical specialist. Safe modular switchboards, dedicated appliance wiring, and Level 2 EV points.", 3),
+  worker("worker-henry-wilson", "Harsh Vardhan", "freelancer", 84, 95, "Sadashivanagar, Bengaluru, KA", ["Panel Upgrades", "Rewiring", "EV Charger Install", "Troubleshooting"], "Master electrician. Complex multi-storey villa rewires and heavy distribution overhauls. Clear communication.", 7),
+  worker("worker-ava-martinez", "Aadhya Mishra", "freelancer", 56, 78, "Bellandur, Bengaluru, KA", ["Outlet Install", "Lighting"], "Apprentice electrician. Reliable, prompt, and strictly adhering to RCCB and grounding standards.", 1),
+  worker("worker-sebastian-lopez", "Sanjay Lodha", "agency", 102, 98, "Koregaon Park, Pune, MH", ["Panel Upgrades", "Rewiring", "Commercial", "EV Charger Install"], "Complete turnkey electrical engineering. Luxury apartments to mid-size commercial offices.", 8),
+  worker("worker-ella-anderson", "Ekta Awasthi", "freelancer", 64, 86, "Banjara Hills, Hyderabad, TS", ["Troubleshooting", "Outlet Install", "Lighting"], "Diagnostic specialist. Quick detection of phase imbalances, voltage drops, and earth leakages.", 5),
+  worker("worker-jackson-thomas", "Navtej Singh", "freelancer", 69, 84, "Vashi, Navi Mumbai, MH", ["Panel Upgrades", "Outlet Install", "EV Charger Install"], "Distribution upgrades and EV charging infrastructure. Punctual, neat, and compliant with DISCOM norms.", 7),
+  worker("worker-grace-harris", "Gauri Pillai", "freelancer", 77, 90, "Rajajinagar, Bengaluru, KA", ["Rewiring", "Panel Upgrades", "Outlet Install"], "Independent house rewires and panel swaps. No shortcuts, premium copper materials, and verified safety tests.", 9),
+  worker("worker-benjamin-young", "Bharat Yadav", "freelancer", 73, 88, "Civil Lines, Jaipur, RJ", ["EV Charger Install", "Smart Home", "Outlet Install"], "Smart home integration, Wi-Fi relays, and EV chargers. Making residential power intelligent and safe.", 6),
 ];
 
 function worker(
@@ -183,7 +183,8 @@ function worker(
   complianceScore: number,
   location: string,
   skills: string[],
-  bio: string
+  bio: string,
+  avatarNum?: number
 ): MarketplaceWorker {
   const hash = id.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
   const certs = skills.slice(0, 4).map((skill, i) => ({
@@ -192,7 +193,7 @@ function worker(
     source: (i % 2 === 0 ? "field" : "vr") as "vr" | "field",
   }));
   const availability: "available" | "busy" | "unavailable" = (hash % 5) === 0 ? "busy" : (hash % 7) === 0 ? "unavailable" : "available";
-  const avatarIndex = (hash % 6) + 1;
+  const avatarIndex = avatarNum || ((hash % 14) + 1);
   return {
     id,
     name,
@@ -214,50 +215,48 @@ function worker(
 }
 
 // ---------------------------------------------------------------------------
-// 15 Demo Homeowners across Indian cities
+// 34 Unique Demo Homeowners across Indian cities (Zero Duplicate Names)
 // ---------------------------------------------------------------------------
 
 export const DEMO_HOMEOWNERS: MarketplaceHomeowner[] = [
-  {
-    id: "homeowner-lisa-wong",
-    name: "Pooja Sharma",
-    location: "Indiranagar, Bengaluru, KA",
-    phone: "+91 98450 12345",
-    jobsPosted: ["job-demo-1", "job-demo-3", "job-fake-21"],
-    createdAt: "2025-10-01T08:00:00Z",
-  },
-  {
-    id: "homeowner-robert-garcia",
-    name: "Rajesh Verma",
-    location: "Koramangala, Bengaluru, KA",
-    phone: "+91 98201 23456",
-    jobsPosted: ["job-demo-2", "job-fake-22"],
-    createdAt: "2025-09-15T08:00:00Z",
-  },
-  {
-    id: "homeowner-anita-sharma",
-    name: "Anita Sharma",
-    location: "Whitefield, Bengaluru, KA",
-    phone: "+91 97410 34567",
-    jobsPosted: ["job-demo-4", "job-fake-23"],
-    createdAt: "2025-08-20T08:00:00Z",
-  },
-  { id: "homeowner-mike-taylor", name: "Mukesh Tiwari", location: "HSR Layout, Bengaluru, KA", phone: "+91 99002 45678", jobsPosted: ["job-fake-1", "job-fake-2"], createdAt: "2025-11-01T08:00:00Z" },
-  { id: "homeowner-jenny-lopez", name: "Jyotsna Lal", location: "Jayanagar, Bengaluru, KA", phone: "+91 98440 56789", jobsPosted: ["job-fake-3", "job-fake-4"], createdAt: "2025-11-05T08:00:00Z" },
-  { id: "homeowner-david-park", name: "Deepak Patel", location: "Powai, Mumbai, MH", phone: "+91 98203 67890", jobsPosted: ["job-fake-5", "job-fake-6"], createdAt: "2025-11-10T08:00:00Z" },
-  { id: "homeowner-emily-chen", name: "Esha Chakraborty", location: "Bandra West, Mumbai, MH", phone: "+91 98205 78901", jobsPosted: ["job-fake-7"], createdAt: "2025-11-12T08:00:00Z" },
-  { id: "homeowner-chris-moore", name: "Chirag Mathur", location: "DLF Phase 4, Gurugram, HR", phone: "+91 98101 89012", jobsPosted: ["job-fake-8", "job-fake-9"], createdAt: "2025-11-15T08:00:00Z" },
+  { id: "homeowner-lisa-wong", name: "Pooja Sharma", location: "Indiranagar, Bengaluru, KA", phone: "+91 98450 12345", jobsPosted: ["job-demo-1"], createdAt: "2025-10-01T08:00:00Z" },
+  { id: "homeowner-robert-garcia", name: "Rajesh Verma", location: "Koramangala, Bengaluru, KA", phone: "+91 98201 23456", jobsPosted: ["job-demo-2"], createdAt: "2025-09-15T08:00:00Z" },
+  { id: "homeowner-anita-sharma", name: "Kavita Singhania", location: "Indiranagar, Bengaluru, KA", phone: "+91 97410 34567", jobsPosted: ["job-demo-3"], createdAt: "2025-08-20T08:00:00Z" },
+  { id: "homeowner-neelam-chawla", name: "Neelam Chawla", location: "Whitefield, Bengaluru, KA", phone: "+91 98801 88990", jobsPosted: ["job-demo-4"], createdAt: "2025-08-25T08:00:00Z" },
+  { id: "homeowner-mike-taylor", name: "Mukesh Trivedi", location: "HSR Layout, Bengaluru, KA", phone: "+91 99002 45678", jobsPosted: ["job-fake-1"], createdAt: "2025-11-01T08:00:00Z" },
+  { id: "homeowner-preeti-srinivasan", name: "Preeti Srinivasan", location: "HSR Layout, Bengaluru, KA", phone: "+91 98451 22334", jobsPosted: ["job-fake-2"], createdAt: "2025-11-03T08:00:00Z" },
+  { id: "homeowner-jenny-lopez", name: "Jyotsna Rao", location: "Jayanagar, Bengaluru, KA", phone: "+91 98440 56789", jobsPosted: ["job-fake-3"], createdAt: "2025-11-05T08:00:00Z" },
+  { id: "homeowner-alok-srivastava", name: "Alok Srivastava", location: "Jayanagar, Bengaluru, KA", phone: "+91 98452 33445", jobsPosted: ["job-fake-4"], createdAt: "2025-11-08T08:00:00Z" },
+  { id: "homeowner-david-park", name: "Deepak Patel", location: "Powai, Mumbai, MH", phone: "+91 98203 67890", jobsPosted: ["job-fake-5"], createdAt: "2025-11-10T08:00:00Z" },
+  { id: "homeowner-smita-merchant", name: "Smita Merchant", location: "Powai, Mumbai, MH", phone: "+91 98204 44556", jobsPosted: ["job-fake-6"], createdAt: "2025-11-11T08:00:00Z" },
+  { id: "homeowner-emily-chen", name: "Esha Sen", location: "Bandra West, Mumbai, MH", phone: "+91 98205 78901", jobsPosted: ["job-fake-7"], createdAt: "2025-11-12T08:00:00Z" },
+  { id: "homeowner-chris-moore", name: "Chirag Mathur", location: "DLF Phase 4, Gurugram, HR", phone: "+91 98101 89012", jobsPosted: ["job-fake-8"], createdAt: "2025-11-15T08:00:00Z" },
+  { id: "homeowner-divya-juneja", name: "Divya Juneja", location: "DLF Phase 4, Gurugram, HR", phone: "+91 98102 55667", jobsPosted: ["job-fake-9"], createdAt: "2025-11-16T08:00:00Z" },
   { id: "homeowner-rachel-green", name: "Ritu Ganguly", location: "Salt Lake, Kolkata, WB", phone: "+91 98301 90123", jobsPosted: ["job-fake-10"], createdAt: "2025-11-18T08:00:00Z" },
-  { id: "homeowner-kevin-brown", name: "Karan Bajaj", location: "Jubilee Hills, Hyderabad, TS", phone: "+91 98490 01234", jobsPosted: ["job-fake-11", "job-fake-12"], createdAt: "2025-11-20T08:00:00Z" },
+  { id: "homeowner-kevin-brown", name: "Karan Bajaj", location: "Jubilee Hills, Hyderabad, TS", phone: "+91 98490 01234", jobsPosted: ["job-fake-11"], createdAt: "2025-11-20T08:00:00Z" },
+  { id: "homeowner-meera-reddy", name: "Meera Reddy", location: "Jubilee Hills, Hyderabad, TS", phone: "+91 98492 66778", jobsPosted: ["job-fake-12"], createdAt: "2025-11-21T08:00:00Z" },
   { id: "homeowner-amanda-wilson", name: "Ananya Walia", location: "Banjara Hills, Hyderabad, TS", phone: "+91 98491 12345", jobsPosted: ["job-fake-13"], createdAt: "2025-11-22T08:00:00Z" },
-  { id: "homeowner-tyler-davis", name: "Tanmay Deshmukh", location: "Kothrud, Pune, MH", phone: "+91 98220 23456", jobsPosted: ["job-fake-14", "job-fake-15"], createdAt: "2025-11-25T08:00:00Z" },
+  { id: "homeowner-tyler-davis", name: "Tanmay Kulkarni", location: "Kothrud, Pune, MH", phone: "+91 98220 23456", jobsPosted: ["job-fake-14"], createdAt: "2025-11-25T08:00:00Z" },
+  { id: "homeowner-swati-gadgil", name: "Swati Gadgil", location: "Kothrud, Pune, MH", phone: "+91 98222 77889", jobsPosted: ["job-fake-15"], createdAt: "2025-11-26T08:00:00Z" },
   { id: "homeowner-nina-kumar", name: "Nina Kumar", location: "Kalyani Nagar, Pune, MH", phone: "+91 98221 34567", jobsPosted: ["job-fake-16"], createdAt: "2025-11-28T08:00:00Z" },
-  { id: "homeowner-jake-martinez", name: "Jayant Malviya", location: "Alwarpet, Chennai, TN", phone: "+91 98400 45678", jobsPosted: ["job-fake-17", "job-fake-18"], createdAt: "2025-12-01T08:00:00Z" },
-  { id: "homeowner-sophie-lee", name: "Sonal Lodha", location: "Adyar, Chennai, TN", phone: "+91 98401 56789", jobsPosted: ["job-fake-19", "job-fake-20"], createdAt: "2025-12-05T08:00:00Z" },
+  { id: "homeowner-jake-martinez", name: "Jayant Malviya", location: "Alwarpet, Chennai, TN", phone: "+91 98400 45678", jobsPosted: ["job-fake-17"], createdAt: "2025-12-01T08:00:00Z" },
+  { id: "homeowner-radhika-ramanathan", name: "Radhika Ramanathan", location: "Alwarpet, Chennai, TN", phone: "+91 98402 88990", jobsPosted: ["job-fake-18"], createdAt: "2025-12-03T08:00:00Z" },
+  { id: "homeowner-sophie-lee", name: "Sonal Lodha", location: "Adyar, Chennai, TN", phone: "+91 98401 56789", jobsPosted: ["job-fake-19"], createdAt: "2025-12-05T08:00:00Z" },
+  { id: "homeowner-balaji-venkat", name: "Balaji Venkat", location: "Adyar, Chennai, TN", phone: "+91 98403 99001", jobsPosted: ["job-fake-20"], createdAt: "2025-12-07T08:00:00Z" },
+  { id: "homeowner-devi-prasad", name: "Devi Prasad", location: "Indiranagar, Bengaluru, KA", phone: "+91 98457 11223", jobsPosted: ["job-fake-21"], createdAt: "2025-12-08T08:00:00Z" },
+  { id: "homeowner-mohit-chhabra", name: "Mohit Chhabra", location: "Koramangala, Bengaluru, KA", phone: "+91 98458 22334", jobsPosted: ["job-fake-22"], createdAt: "2025-12-09T08:00:00Z" },
+  { id: "homeowner-anita-rao", name: "Anita Rao", location: "Whitefield, Bengaluru, KA", phone: "+91 98456 88990", jobsPosted: ["job-fake-23"], createdAt: "2025-12-25T08:00:00Z" },
+  { id: "homeowner-gautam-sengupta", name: "Gautam Sengupta", location: "Koramangala, Bengaluru, KA", phone: "+91 98453 11223", jobsPosted: ["job-fake-24"], createdAt: "2025-12-10T08:00:00Z" },
+  { id: "homeowner-vandana-murthy", name: "Vandana Murthy", location: "Malleshwaram, Bengaluru, KA", phone: "+91 98454 22334", jobsPosted: ["job-fake-25"], createdAt: "2025-12-12T08:00:00Z" },
+  { id: "homeowner-harish-bahl", name: "Harish Bahl", location: "Worli, Mumbai, MH", phone: "+91 98206 33445", jobsPosted: ["job-fake-26"], createdAt: "2025-12-15T08:00:00Z" },
+  { id: "homeowner-sangeeta-mittal", name: "Sangeeta Mittal", location: "Greater Kailash, New Delhi, DL", phone: "+91 98103 44556", jobsPosted: ["job-fake-27"], createdAt: "2025-12-18T08:00:00Z" },
+  { id: "homeowner-vivek-roy", name: "Vivek Roy", location: "Sushant Lok, Gurugram, HR", phone: "+91 98104 55667", jobsPosted: ["job-fake-28"], createdAt: "2025-12-20T08:00:00Z" },
+  { id: "homeowner-farhan-qureshi", name: "Farhan Qureshi", location: "Banjara Hills, Hyderabad, TS", phone: "+91 98493 66778", jobsPosted: ["job-fake-29"], createdAt: "2025-12-22T08:00:00Z" },
+  { id: "homeowner-rekha-nambiar", name: "Rekha Nambiar", location: "Indiranagar, Bengaluru, KA", phone: "+91 98455 77889", jobsPosted: ["job-fake-30"], createdAt: "2025-12-24T08:00:00Z" },
 ];
 
 // ---------------------------------------------------------------------------
-// 4 Demo Jobs — Indian residential projects
+// 4 Demo Jobs — Indian residential projects (Unique Posters)
 // ---------------------------------------------------------------------------
 
 export const DEMO_JOBS: MarketplaceJob[] = [
@@ -313,9 +312,9 @@ export const DEMO_JOBS: MarketplaceJob[] = [
   // In-progress job
   {
     id: "job-demo-3",
-    posterId: "homeowner-lisa-wong",
+    posterId: "homeowner-anita-sharma",
     posterType: "homeowner",
-    posterName: "Pooja Sharma",
+    posterName: "Kavita Singhania",
     title: "EV Charger Installation — 7.4kW Fast Wallbox",
     type: "outlet-install",
     description:
@@ -348,9 +347,9 @@ export const DEMO_JOBS: MarketplaceJob[] = [
   // Completed job
   {
     id: "job-demo-4",
-    posterId: "homeowner-anita-sharma",
+    posterId: "homeowner-neelam-chawla",
     posterType: "homeowner",
-    posterName: "Anita Sharma",
+    posterName: "Neelam Chawla",
     title: "Villa Troubleshooting — Voltage Fluctuation & Flickering",
     type: "troubleshooting",
     description:
@@ -384,37 +383,37 @@ export const DEMO_JOBS: MarketplaceJob[] = [
     },
     createdAt: "2026-01-08T10:00:00Z",
   },
-  // ---- More open jobs for swiping ----
-  openJob("job-fake-1", "homeowner-mike-taylor", "Mukesh Tiwari", "3-Phase 63A Distribution Board Upgrade", "panel-upgrade", "Older villa in HSR Layout needs heavy service upgrade for multiple ACs and EV charger. Old fuse cutouts must be replaced.", "HSR Layout, Bengaluru, KA", 3200, 5000, "normal", [{ skill: "Panel Upgrades", level: 2 }]),
-  openJob("job-fake-2", "homeowner-mike-taylor", "Mukesh Tiwari", "EV Charger — 15A / 16A Dedicated Power Point", "outlet-install", "Need dedicated heavy 16A power socket in covered parking for two-wheeler / car slow charging. Clean conduit run.", "HSR Layout, Bengaluru, KA", 600, 1200, "flexible", [{ skill: "EV Charger Install", level: 1 }]),
-  openJob("job-fake-3", "homeowner-jenny-lopez", "Jyotsna Lal", "Bathroom GFCI/RCCB & Vanity Lighting", "outlet-install", "Two bathrooms need shock-safe moisture-proof modular outlets and modern mirror vanity lights. Safety compliance required.", "Jayanagar, Bengaluru, KA", 400, 900, "normal", [{ skill: "Outlet Install", level: 1 }, { skill: "Lighting", level: 1 }]),
-  openJob("job-fake-4", "homeowner-jenny-lopez", "Jyotsna Lal", "Subpanel for Rooftop Terrace Studio", "panel-upgrade", "Add 40A sub-distribution board on 3rd floor terrace for home office and future solar inverter. Main panel on ground floor.", "Jayanagar, Bengaluru, KA", 1800, 2800, "normal", [{ skill: "Panel Upgrades", level: 1 }]),
+  // ---- 30 Open Jobs — Every Job Has A Completely Unique Poster Name ----
+  openJob("job-fake-1", "homeowner-mike-taylor", "Mukesh Trivedi", "3-Phase 63A Distribution Board Upgrade", "panel-upgrade", "Older villa in HSR Layout needs heavy service upgrade for multiple ACs and EV charger. Old fuse cutouts must be replaced.", "HSR Layout, Bengaluru, KA", 3200, 5000, "normal", [{ skill: "Panel Upgrades", level: 2 }]),
+  openJob("job-fake-2", "homeowner-preeti-srinivasan", "Preeti Srinivasan", "EV Charger — 15A / 16A Dedicated Power Point", "outlet-install", "Need dedicated heavy 16A power socket in covered parking for two-wheeler / car slow charging. Clean conduit run.", "HSR Layout, Bengaluru, KA", 600, 1200, "flexible", [{ skill: "EV Charger Install", level: 1 }]),
+  openJob("job-fake-3", "homeowner-jenny-lopez", "Jyotsna Rao", "Bathroom GFCI/RCCB & Vanity Lighting", "outlet-install", "Two bathrooms need shock-safe moisture-proof modular outlets and modern mirror vanity lights. Safety compliance required.", "Jayanagar, Bengaluru, KA", 400, 900, "normal", [{ skill: "Outlet Install", level: 1 }, { skill: "Lighting", level: 1 }]),
+  openJob("job-fake-4", "homeowner-alok-srivastava", "Alok Srivastava", "Subpanel for Rooftop Terrace Studio", "panel-upgrade", "Add 40A sub-distribution board on 3rd floor terrace for home office and future solar inverter. Main panel on ground floor.", "Jayanagar, Bengaluru, KA", 1800, 2800, "normal", [{ skill: "Panel Upgrades", level: 1 }]),
   openJob("job-fake-5", "homeowner-david-park", "Deepak Patel", "Apartment Rewiring — Living & Dining", "rewiring", "3BHK apartment in Powai undergoing renovation. Complete rewiring with FRLS copper conduits before false ceiling goes up.", "Powai, Mumbai, MH", 2500, 4200, "urgent", [{ skill: "Rewiring", level: 2 }]),
-  openJob("job-fake-6", "homeowner-david-park", "Deepak Patel", "Flickering Lights & Phase Imbalance Diagnosis", "troubleshooting", "Lights dim when 2-ton AC compressor starts. Panel is 15 years old. Need comprehensive check and phase load rebalancing.", "Powai, Mumbai, MH", 250, 600, "urgent", [{ skill: "Troubleshooting", level: 1 }]),
-  openJob("job-fake-7", "homeowner-emily-chen", "Esha Chakraborty", "Whole-House Surge & Lightning Protection", "panel-upgrade", "Install Schneider Type 2 surge protection device (SPD) in main DB to protect smart TVs, computers, and appliances from monsoon spikes.", "Bandra West, Mumbai, MH", 500, 900, "normal", [{ skill: "Panel Upgrades", level: 1 }]),
+  openJob("job-fake-6", "homeowner-smita-merchant", "Smita Merchant", "Flickering Lights & Phase Imbalance Diagnosis", "troubleshooting", "Lights dim when 2-ton AC compressor starts. Panel is 15 years old. Need comprehensive check and phase load rebalancing.", "Powai, Mumbai, MH", 250, 600, "urgent", [{ skill: "Troubleshooting", level: 1 }]),
+  openJob("job-fake-7", "homeowner-emily-chen", "Esha Sen", "Whole-House Surge & Lightning Protection", "panel-upgrade", "Install Schneider Type 2 surge protection device (SPD) in main DB to protect smart TVs, computers, and appliances from monsoon spikes.", "Bandra West, Mumbai, MH", 500, 900, "normal", [{ skill: "Panel Upgrades", level: 1 }]),
   openJob("job-fake-8", "homeowner-chris-moore", "Chirag Mathur", "EV Fast Charger 11kW Wallbox Install", "outlet-install", "Install 11kW 3-phase EV wallbox in driveway. Panel located in basement utility room. Approx 15 meter run.", "DLF Phase 4, Gurugram, HR", 800, 1400, "normal", [{ skill: "EV Charger Install", level: 2 }]),
-  openJob("job-fake-9", "homeowner-chris-moore", "Chirag Mathur", "Kitchen Island Concealed Pop-up Outlets", "outlet-install", "Add two motorized concealed pop-up power towers to granite kitchen island. Under-counter cabling required.", "DLF Phase 4, Gurugram, HR", 350, 700, "flexible", [{ skill: "Outlet Install", level: 1 }]),
+  openJob("job-fake-9", "homeowner-divya-juneja", "Divya Juneja", "Kitchen Island Concealed Pop-up Outlets", "outlet-install", "Add two motorized concealed pop-up power towers to granite kitchen island. Under-counter cabling required.", "DLF Phase 4, Gurugram, HR", 350, 700, "flexible", [{ skill: "Outlet Install", level: 1 }]),
   openJob("job-fake-10", "homeowner-rachel-green", "Ritu Ganguly", "Concealed COB & Profile LED Lighting", "lighting", "Install magnetic track and profile LED lighting in living room ceiling. False ceiling framing ready.", "Salt Lake, Kolkata, WB", 600, 1100, "normal", [{ skill: "Lighting", level: 2 }]),
   openJob("job-fake-11", "homeowner-kevin-brown", "Karan Bajaj", "Turnkey Villa Distribution Upgrade", "panel-upgrade", "Full 100A 3-phase service upgrade with automatic phase changer and changeover switch for backup diesel generator.", "Jubilee Hills, Hyderabad, TS", 4500, 6500, "normal", [{ skill: "Panel Upgrades", level: 2 }]),
-  openJob("job-fake-12", "homeowner-kevin-brown", "Karan Bajaj", "Smart Wi-Fi Switch Modules — 16 Gangs", "other", "Install smart Wi-Fi / Zigbee automation relays behind existing modular switch plates. Neutral wires already pulled.", "Jubilee Hills, Hyderabad, TS", 900, 1800, "flexible", [{ skill: "Smart Home", level: 1 }]),
+  openJob("job-fake-12", "homeowner-meera-reddy", "Meera Reddy", "Smart Wi-Fi Switch Modules — 16 Gangs", "other", "Install smart Wi-Fi / Zigbee automation relays behind existing modular switch plates. Neutral wires already pulled.", "Jubilee Hills, Hyderabad, TS", 900, 1800, "flexible", [{ skill: "Smart Home", level: 1 }]),
   openJob("job-fake-13", "homeowner-amanda-wilson", "Ananya Walia", "Home Studio Dedicated Audio Circuit", "rewiring", "Dedicated ultra-clean 20A circuit with isolated ground for home recording studio. Zero noise interference.", "Banjara Hills, Hyderabad, TS", 1200, 2200, "normal", [{ skill: "Rewiring", level: 1 }, { skill: "Outlet Install", level: 1 }]),
-  openJob("job-fake-14", "homeowner-tyler-davis", "Tanmay Deshmukh", "Swimming Pool Filtration Pump Circuit", "outlet-install", "Dedicated weather-proof 3-phase pump circuit with isolator switch and RCCB protection for backyard plunge pool.", "Kothrud, Pune, MH", 550, 950, "normal", [{ skill: "Outlet Install", level: 2 }]),
-  openJob("job-fake-15", "homeowner-tyler-davis", "Tanmay Deshmukh", "Distribution Board Audit & Circuit Labeling", "troubleshooting", "Panel is unorganized with unlabeled breakers. Need complete line tracing, color-coded tagging, and safety inspection.", "Kothrud, Pune, MH", 200, 450, "flexible", [{ skill: "Troubleshooting", level: 1 }]),
+  openJob("job-fake-14", "homeowner-tyler-davis", "Tanmay Kulkarni", "Swimming Pool Filtration Pump Circuit", "outlet-install", "Dedicated weather-proof 3-phase pump circuit with isolator switch and RCCB protection for backyard plunge pool.", "Kothrud, Pune, MH", 550, 950, "normal", [{ skill: "Outlet Install", level: 2 }]),
+  openJob("job-fake-15", "homeowner-swati-gadgil", "Swati Gadgil", "Distribution Board Audit & Circuit Labeling", "troubleshooting", "Panel is unorganized with unlabeled breakers. Need complete line tracing, color-coded tagging, and safety inspection.", "Kothrud, Pune, MH", 200, 450, "flexible", [{ skill: "Troubleshooting", level: 1 }]),
   openJob("job-fake-16", "homeowner-nina-kumar", "Nina Kumar", "7.4kW Type 2 EV Charger Installation", "outlet-install", "Hardwire 7.4kW EV charger in covered garage. Dedicated conduit from main meter box with 32A MCB.", "Kalyani Nagar, Pune, MH", 700, 1300, "normal", [{ skill: "EV Charger Install", level: 1 }]),
   openJob("job-fake-17", "homeowner-jake-martinez", "Jayant Malviya", "Workshop Subpanel + Industrial Sockets", "panel-upgrade", "63A sub-panel in ground floor workshop with 3 industrial 16A/32A sockets for power tools. Main DB has capacity.", "Alwarpet, Chennai, TN", 1600, 2600, "urgent", [{ skill: "Panel Upgrades", level: 1 }, { skill: "Outlet Install", level: 1 }]),
-  openJob("job-fake-18", "homeowner-jake-martinez", "Jayant Malviya", "Outdoor Garden Bollards & Facade Lights", "outlet-install", "Four outdoor weatherproof sockets and low-voltage warm LED garden bollards with automatic timer control.", "Alwarpet, Chennai, TN", 800, 1500, "flexible", [{ skill: "Outlet Install", level: 2 }, { skill: "Lighting", level: 1 }]),
+  openJob("job-fake-18", "homeowner-radhika-ramanathan", "Radhika Ramanathan", "Outdoor Garden Bollards & Facade Lights", "outlet-install", "Four outdoor weatherproof sockets and low-voltage warm LED garden bollards with automatic timer control.", "Alwarpet, Chennai, TN", 800, 1500, "flexible", [{ skill: "Outlet Install", level: 2 }, { skill: "Lighting", level: 1 }]),
   openJob("job-fake-19", "homeowner-sophie-lee", "Sonal Lodha", "Full Heritage Bungalow Rewire", "rewiring", "Complete rewiring of 35-year-old bungalow. Modern distribution boards, multi-tier earthing, and premium modular switchboards.", "Adyar, Chennai, TN", 12000, 18000, "normal", [{ skill: "Rewiring", level: 2 }, { skill: "Panel Upgrades", level: 2 }]),
-  openJob("job-fake-20", "homeowner-sophie-lee", "Sonal Lodha", "Kitchen Breaker Tripping Diagnostic", "troubleshooting", "Kitchen MCB trips every time microwave and water kettle run simultaneously. Need dedicated circuit or line split.", "Adyar, Chennai, TN", 150, 400, "urgent", [{ skill: "Troubleshooting", level: 1 }]),
-  openJob("job-fake-21", "homeowner-lisa-wong", "Pooja Sharma", "Ceiling Fan Installation — 3 Bedrooms", "other", "Install 3 BLDC energy-saving ceiling fans with remote controllers on existing ceiling hooks. No new wiring needed.", "Indiranagar, Bengaluru, KA", 300, 600, "flexible", []),
-  openJob("job-fake-22", "homeowner-robert-garcia", "Rajesh Verma", "Smoke & Carbon Monoxide Detector Upgrade", "other", "Install interconnected smart smoke alarms in hallway, kitchen, and bedrooms. Battery-operated wireless units.", "Koramangala, Bengaluru, KA", 250, 500, "normal", []),
-  openJob("job-fake-23", "homeowner-anita-sharma", "Anita Sharma", "Video Doorbell & Chime Wiring", "other", "Install smart video doorbell with transformer and electronic chime unit. Low-voltage wiring to front gate.", "Whitefield, Bengaluru, KA", 150, 350, "flexible", []),
-  openJob("job-fake-24", "homeowner-mike-taylor", "Mukesh Tiwari", "Heavy 20A Power Point for Washing Machine", "outlet-install", "Install heavy-duty 20A modular point with indicator and dedicated MCB in laundry utility balcony.", "HSR Layout, Bengaluru, KA", 200, 450, "normal", [{ skill: "Outlet Install", level: 1 }]),
-  openJob("job-fake-25", "homeowner-jenny-lopez", "Jyotsna Lal", "Exterior Motion Security Lights", "lighting", "Two radar motion-sensor floodlights at driveway and rear garden entrance. Replace existing manual fixtures.", "Jayanagar, Bengaluru, KA", 350, 650, "flexible", [{ skill: "Lighting", level: 1 }]),
-  openJob("job-fake-26", "homeowner-david-park", "Deepak Patel", "Inverter / Solar Hybrid Transfer Switch", "panel-upgrade", "Install automatic changeover switch for rooftop solar hybrid inverter. Safely isolate from grid during outages.", "Powai, Mumbai, MH", 600, 1100, "urgent", [{ skill: "Panel Upgrades", level: 2 }]),
-  openJob("job-fake-27", "homeowner-emily-chen", "Esha Chakraborty", "Under-Cabinet Profile Warm LED Strips", "lighting", "Kitchen counter under-cabinet 24V COB LED strip lighting with concealed driver and sensor hand-wave switch.", "Bandra West, Mumbai, MH", 200, 500, "flexible", [{ skill: "Lighting", level: 1 }]),
-  openJob("job-fake-28", "homeowner-chris-moore", "Chirag Mathur", "Jacuzzi Power Line with Weatherproof Isolator", "outlet-install", "Dedicated 32A single-phase power line for terrace Jacuzzi tub. Armored cable run with IP66 isolator switch.", "DLF Phase 4, Gurugram, HR", 700, 1200, "normal", [{ skill: "Outlet Install", level: 2 }]),
-  openJob("job-fake-29", "homeowner-kevin-brown", "Karan Bajaj", "Exhaust Ventilation Fan Troubleshooting", "troubleshooting", "Master bathroom inline duct exhaust fan not turning on. Need diagnosis of capacitor, switch, or wiring fault.", "Jubilee Hills, Hyderabad, TS", 100, 300, "flexible", [{ skill: "Troubleshooting", level: 1 }]),
-  openJob("job-fake-30", "homeowner-amanda-wilson", "Ananya Walia", "EV Charger Wallbox — Gated Villa", "outlet-install", "Install 7.4kW Type 2 EV wallbox for MG ZS EV in front portico. Dedicated DP MCB and earthing connection.", "Banjara Hills, Hyderabad, TS", 750, 1400, "normal", [{ skill: "EV Charger Install", level: 1 }]),
+  openJob("job-fake-20", "homeowner-balaji-venkat", "Balaji Venkat", "Kitchen Breaker Tripping Diagnostic", "troubleshooting", "Kitchen MCB trips every time microwave and water kettle run simultaneously. Need dedicated circuit or line split.", "Adyar, Chennai, TN", 150, 400, "urgent", [{ skill: "Troubleshooting", level: 1 }]),
+  openJob("job-fake-21", "homeowner-devi-prasad", "Devi Prasad", "Ceiling Fan Installation — 3 Bedrooms", "other", "Install 3 BLDC energy-saving ceiling fans with remote controllers on existing ceiling hooks. No new wiring needed.", "Indiranagar, Bengaluru, KA", 300, 600, "flexible", []),
+  openJob("job-fake-22", "homeowner-mohit-chhabra", "Mohit Chhabra", "Smoke & Carbon Monoxide Detector Upgrade", "other", "Install interconnected smart smoke alarms in hallway, kitchen, and bedrooms. Battery-operated wireless units.", "Koramangala, Bengaluru, KA", 250, 500, "normal", []),
+  openJob("job-fake-23", "homeowner-anita-rao", "Anita Rao", "Video Doorbell & Chime Wiring", "other", "Install smart video doorbell with transformer and electronic chime unit. Low-voltage wiring to front gate.", "Whitefield, Bengaluru, KA", 150, 350, "flexible", []),
+  openJob("job-fake-24", "homeowner-gautam-sengupta", "Gautam Sengupta", "Heavy 20A Power Point for Washing Machine", "outlet-install", "Install heavy-duty 20A modular point with indicator and dedicated MCB in laundry utility balcony.", "Koramangala, Bengaluru, KA", 200, 450, "normal", [{ skill: "Outlet Install", level: 1 }]),
+  openJob("job-fake-25", "homeowner-vandana-murthy", "Vandana Murthy", "Exterior Motion Security Lights", "lighting", "Two radar motion-sensor floodlights at driveway and rear garden entrance. Replace existing manual fixtures.", "Malleshwaram, Bengaluru, KA", 350, 650, "flexible", [{ skill: "Lighting", level: 1 }]),
+  openJob("job-fake-26", "homeowner-harish-bahl", "Harish Bahl", "Inverter / Solar Hybrid Transfer Switch", "panel-upgrade", "Install automatic changeover switch for rooftop solar hybrid inverter. Safely isolate from grid during outages.", "Worli, Mumbai, MH", 600, 1100, "urgent", [{ skill: "Panel Upgrades", level: 2 }]),
+  openJob("job-fake-27", "homeowner-sangeeta-mittal", "Sangeeta Mittal", "Under-Cabinet Profile Warm LED Strips", "lighting", "Kitchen counter under-cabinet 24V COB LED strip lighting with concealed driver and sensor hand-wave switch.", "Greater Kailash, New Delhi, DL", 200, 500, "flexible", [{ skill: "Lighting", level: 1 }]),
+  openJob("job-fake-28", "homeowner-vivek-roy", "Vivek Roy", "Jacuzzi Power Line with Weatherproof Isolator", "outlet-install", "Dedicated 32A single-phase power line for terrace Jacuzzi tub. Armored cable run with IP66 isolator switch.", "Sushant Lok, Gurugram, HR", 700, 1200, "normal", [{ skill: "Outlet Install", level: 2 }]),
+  openJob("job-fake-29", "homeowner-farhan-qureshi", "Farhan Qureshi", "Exhaust Ventilation Fan Troubleshooting", "troubleshooting", "Master bathroom inline duct exhaust fan not turning on. Need diagnosis of capacitor, switch, or wiring fault.", "Banjara Hills, Hyderabad, TS", 100, 300, "flexible", [{ skill: "Troubleshooting", level: 1 }]),
+  openJob("job-fake-30", "homeowner-rekha-nambiar", "Rekha Nambiar", "EV Charger Wallbox — Gated Villa", "outlet-install", "Install 7.4kW Type 2 EV wallbox for MG ZS EV in front portico. Dedicated DP MCB and earthing connection.", "Indiranagar, Bengaluru, KA", 750, 1400, "normal", [{ skill: "EV Charger Install", level: 1 }]),
 ];
 
 function openJob(
@@ -458,8 +457,8 @@ export const DEMO_MESSAGES: MarketplaceMessage[] = [
   {
     id: "msg-demo-1",
     jobId: "job-demo-3",
-    senderId: "homeowner-lisa-wong",
-    senderName: "Pooja Sharma",
+    senderId: "homeowner-anita-sharma",
+    senderName: "Kavita Singhania",
     text: "Hi Sunita! Thanks for taking the job. When would you like to come by for a site check in Indiranagar?",
     timestamp: "2026-02-06T09:00:00Z",
   },
@@ -467,15 +466,15 @@ export const DEMO_MESSAGES: MarketplaceMessage[] = [
     id: "msg-demo-2",
     jobId: "job-demo-3",
     senderId: "worker-maria-santos",
-    senderName: "Sunita Sharma",
-    text: "Hi Pooja! I can swing by Thursday afternoon to inspect the main distribution board and plan the conduit run. Does 2pm work?",
+    senderName: "Sunita Deshmukh",
+    text: "Hi Kavita! I can swing by Thursday afternoon to inspect the main distribution board and plan the conduit run. Does 2pm work?",
     timestamp: "2026-02-06T10:15:00Z",
   },
   {
     id: "msg-demo-3",
     jobId: "job-demo-3",
-    senderId: "homeowner-lisa-wong",
-    senderName: "Pooja Sharma",
+    senderId: "homeowner-anita-sharma",
+    senderName: "Kavita Singhania",
     text: "Thursday at 2pm works great! The meter room is near the parking entrance on the ground floor. I will inform the security guard.",
     timestamp: "2026-02-06T10:30:00Z",
   },
@@ -483,15 +482,15 @@ export const DEMO_MESSAGES: MarketplaceMessage[] = [
     id: "msg-demo-4",
     jobId: "job-demo-3",
     senderId: "worker-maria-santos",
-    senderName: "Sunita Sharma",
+    senderName: "Sunita Deshmukh",
     text: "Perfect. Just completed the site inspection — your distribution board has ample space for a 32A DP MCB and the conduit run to the charger spot will be about 10 meters. I will arrange the armored cable and schedule installation for the 20th as agreed.",
     timestamp: "2026-02-08T16:45:00Z",
   },
   {
     id: "msg-demo-5",
     jobId: "job-demo-3",
-    senderId: "homeowner-lisa-wong",
-    senderName: "Pooja Sharma",
+    senderId: "homeowner-anita-sharma",
+    senderName: "Kavita Singhania",
     text: "Sounds great, thanks for the clear update! Looking forward to having the charger installed.",
     timestamp: "2026-02-08T17:00:00Z",
   },

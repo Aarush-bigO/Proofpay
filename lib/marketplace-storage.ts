@@ -10,7 +10,7 @@ const MK = {
   homeowners: 'proofpay_mp_homeowners',
   jobs: 'proofpay_mp_jobs',
   messages: 'proofpay_mp_messages',
-  demoLoaded: 'proofpay_mp_demo_loaded_v2',
+  demoLoaded: 'proofpay_mp_demo_loaded_v4',
   currentUserId: 'proofpay_mp_current_user',
   currentUserType: 'proofpay_mp_current_user_type',
   workerSwipes: 'proofpay_mp_worker_swipes',
