@@ -3,8 +3,8 @@ export function buildRecheckPrompt(
   originalViolations: {
     description: string;
     code_section: string;
-    severity: string;
-    fix_instruction: string;
+    severity?: string;
+    fix_instruction?: string;
     [key: string]: unknown;
   }[],
   userDescription?: string
@@ -12,9 +12,9 @@ export function buildRecheckPrompt(
   const violationsList = originalViolations
     .map(
       (v, i) =>
-        `${i + 1}. [${v.severity.toUpperCase()}] ${v.description}
+        `${i + 1}. [${((v.severity as string) || 'major').toUpperCase()}] ${v.description}
    Code Section: ${v.code_section}
-   Required Fix: ${v.fix_instruction}`
+   Required Fix: ${(v.fix_instruction as string) || (v.fixInstruction as string) || 'Remediate to NEC code standard'}`
     )
     .join('\n');
 
