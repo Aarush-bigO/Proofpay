@@ -48,38 +48,38 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.75rem;
+  --background: #F7F2EA;
+  --foreground: #3B2418;
+  --card: #FAF5EE;
+  --card-foreground: #3B2418;
+  --popover: #FAF5EE;
+  --popover-foreground: #3B2418;
+  --primary: #8EC5FF;
+  --primary-foreground: #3B2418;
+  --secondary: #EFE5D6;
+  --secondary-foreground: #3B2418;
+  --muted: #EFE5D6;
+  --muted-foreground: #7A6658;
+  --accent: #E3EFFF;
+  --accent-foreground: #1D3F66;
+  --destructive: #B9382C;
+  --border: #DBCBB8;
+  --input: #DBCBB8;
+  --ring: #8EC5FF;
+  --chart-1: #8EC5FF;
+  --chart-2: #7A6658;
+  --chart-3: #DBCBB8;
+  --chart-4: #3B2418;
+  --chart-5: #EFE5D6;
+  --sidebar: #FAF5EE;
+  --sidebar-foreground: #3B2418;
+  --sidebar-primary: #8EC5FF;
+  --sidebar-primary-foreground: #3B2418;
+  --sidebar-accent: #EFE5D6;
+  --sidebar-accent-foreground: #3B2418;
+  --sidebar-border: #DBCBB8;
+  --sidebar-ring: #8EC5FF;
 }
 
 .dark {
@@ -119,10 +119,127 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
-    @apply bg-background text-foreground;
+    background-color: #F7F2EA;
+    color: #3B2418;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
+}
+
+/* ==========================================================================
+   AESTHETIC NATURAL PALETTE (Espresso #3B2418, Cream #F2E8DA, Baby Blue #8EC5FF)
+   ========================================================================== */
+
+/* Page Background & Canvas */
+.bg-slate-50,
+div.min-h-screen.bg-slate-50 {
+  background-color: #F7F2EA !important;
+  color: #3B2418;
+}
+
+.bg-white {
+  background-color: #FAF5EE !important;
+}
+
+.bg-slate-100 {
+  background-color: #EFE5D6 !important;
+}
+
+/* Borders */
+.border-slate-200,
+.border-slate-100,
+.border-slate-300 {
+  border-color: #DBCBB8 !important;
+}
+
+/* Primary & Headings Typography */
+.text-slate-900,
+.text-slate-800,
+.text-slate-700 {
+  color: #3B2418 !important;
+}
+
+/* Secondary & Muted Typography */
+.text-slate-600,
+.text-slate-500 {
+  color: #7A6658 !important;
+}
+
+.text-slate-400 {
+  color: #948274 !important;
+}
+
+/* Primary Baby Blue Accent Buttons & Active States */
+.bg-blue-600,
+.bg-blue-500,
+button.bg-blue-600,
+a.bg-blue-600 {
+  background-color: #8EC5FF !important;
+  color: #3B2418 !important;
+  font-weight: 600 !important;
+}
+
+.bg-blue-600:hover,
+.bg-blue-500:hover,
+.hover\:bg-blue-700:hover,
+.hover\:bg-blue-600:hover {
+  background-color: #76B6FC !important;
+  color: #3B2418 !important;
+}
+
+/* Ensure white text inside blue buttons inherits high-contrast espresso brown */
+.bg-blue-600.text-white,
+.bg-blue-500.text-white,
+.bg-blue-600 .text-white,
+.bg-blue-500 .text-white {
+  color: #3B2418 !important;
+}
+
+.text-blue-600,
+.text-blue-500 {
+  color: #235D9F !important;
+}
+
+.bg-blue-50 {
+  background-color: #EBF3FC !important;
+}
+
+.border-blue-200 {
+  border-color: #BDDCFC !important;
+}
+
+.text-blue-700,
+.text-blue-800 {
+  color: #1A3E66 !important;
+}
+
+/* Dark Headers & Credential Banners (Luxury Espresso) */
+.bg-slate-900 {
+  background-color: #3B2418 !important;
+  color: #FAF5EE !important;
+}
+
+.bg-slate-900 h2,
+.bg-slate-900 span,
+.bg-slate-900 p {
+  color: #FAF5EE !important;
+}
+
+/* Subtle Cards & Interactive Hover Softness */
+.border-slate-200 {
+  border-color: #DBCBB8 !important;
+}
+
+/* Inputs and Forms */
+input, textarea, select {
+  background-color: #FAF5EE !important;
+  border-color: #DBCBB8 !important;
+  color: #3B2418 !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline-color: #8EC5FF !important;
+  border-color: #8EC5FF !important;
 }
