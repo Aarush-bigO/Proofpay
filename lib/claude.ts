@@ -97,10 +97,17 @@ function stripDataUrlPrefix(base64Image: string): string {
   return base64Image;
 }
 
+/**
+ * Comprehensive result of a multimodal AI electrical code inspection.
+ */
 export interface AnalysisResult {
+  /** Summary of craftsmanship and work detected */
   description: string;
+  /** True if zero critical/major violations exist and score >= 80% */
   is_compliant: boolean;
+  /** Compliance score calculated on a 0-100 scale */
   compliance_score: number;
+  /** List of detected code infractions grounded in regulatory citations */
   violations: {
     description: string;
     code_section: string;
@@ -111,12 +118,16 @@ export interface AnalysisResult {
     why_this_matters: string;
     visual_evidence: string;
   }[];
+  /** Specific compliant items that passed inspection */
   correct_items: string[];
+  /** Breakdown of skilled competencies demonstrated in the photo */
   skills_demonstrated: {
     skill: string;
     quality: 'good' | 'acceptable' | 'needs_work';
   }[];
+  /** Comprehensive inspection assessment summary */
   overall_assessment: string;
+  /** Primary trade work category detected */
   work_type_detected: string;
 }
 
