@@ -155,7 +155,12 @@ export function getWorkers(): MarketplaceWorker[] {
 }
 
 export function getWorker(id: string): MarketplaceWorker | undefined {
-  return getWorkers().find((w) => w.id === id);
+  const workers = getWorkers();
+  return (
+    workers.find((w) => w.id === id) ||
+    workers.find((w) => w.id === `worker-demo-${id.replace(/^worker-/, '')}`) ||
+    workers.find((w) => w.id.endsWith(id))
+  );
 }
 
 export function saveWorker(worker: MarketplaceWorker): void {
@@ -208,7 +213,12 @@ export function getJobs(): MarketplaceJob[] {
 }
 
 export function getJob(id: string): MarketplaceJob | undefined {
-  return getJobs().find((j) => j.id === id);
+  const jobs = getJobs();
+  return (
+    jobs.find((j) => j.id === id) ||
+    jobs.find((j) => j.id === `job-demo-${id.replace(/^job-/, '')}`) ||
+    jobs.find((j) => j.id.endsWith(id))
+  );
 }
 
 export function saveJob(job: MarketplaceJob): void {
