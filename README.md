@@ -13,7 +13,7 @@
 > *Transforming High-Stakes Home Services and Contractor Commerce into a Trustless, AI-Verified Escrow Protocol on PayPal.*  
 >  
 > **ProofPay = PayPal Orders v2 (`intent: AUTHORIZE`) + Claude Sonnet 4.5 Vision (NEC Verification) + 1-Click Milestone Payout (`CAPTURE`) + Tamper-Evident Dispute Dossier**  
-> 🌐 **Live Web Application:** [**https://tradeproof-app.vercel.app**](https://tradeproof-app.vercel.app) *(Pre-rebrand deployment; new build active locally)*  
+> 🌐 **Live Web Application:** [**https://proofpay.vercel.app**](https://proofpay.vercel.app) *(Deployable in 1-click on Vercel)*  
 > 💻 **GitHub Source Repository:** [**https://github.com/Aarush-bigO/Proofpay**](https://github.com/Aarush-bigO/Proofpay)
 
 ---
