@@ -15,7 +15,6 @@ import {
   Copy,
   Check,
   Zap,
-  ArrowRight,
   RotateCcw,
   Sparkles,
 } from "lucide-react";
@@ -53,19 +52,35 @@ export function PayPalEscrowCard({
   posterName = "Homeowner",
   onStatusChange,
 }: PayPalEscrowCardProps) {
-  const [escrow, setEscrow] = useState<EscrowRecord | null>(null);
+  const [escrow, setEscrow] = useState<EscrowRecord | null>(() => {
+    if (typeof window === "undefined") return null;
+    try {
+      const stored = localStorage.getItem(`proofpay_escrow_${jobId}`);
+      if (stored) return JSON.parse(stored);
+      if (jobStatus === "in-progress" || jobStatus === "matched") {
+        return {
+          orderId: `8X77492${jobId.replace(/\D/g, "").slice(0, 4) || "01"}`,
+          authorizationId: `AUTH-PP-SANDBOX-${jobId.slice(0, 6).toUpperCase() || "DEMO"}`,
+          amount: budgetAmount,
+          currency: "USD",
+          status: "AUTHORIZED",
+          createdAt: new Date().toISOString(),
+        };
+      }
+    } catch {
+      // fallback
+    }
+    return null;
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  // Load persisted escrow state for this job from localStorage
+  // Sync initial demo state to localStorage if needed
   useEffect(() => {
     if (typeof window === "undefined") return;
     try {
       const stored = localStorage.getItem(`proofpay_escrow_${jobId}`);
-      if (stored) {
-        setEscrow(JSON.parse(stored));
-      } else if (jobStatus === "in-progress" || jobStatus === "matched") {
-        // Pre-initialize demo escrow hold for in-progress jobs
+      if (!stored && (jobStatus === "in-progress" || jobStatus === "matched")) {
         const initialRecord: EscrowRecord = {
           orderId: `8X77492${jobId.replace(/\D/g, "").slice(0, 4) || "01"}`,
           authorizationId: `AUTH-PP-SANDBOX-${jobId.slice(0, 6).toUpperCase() || "DEMO"}`,
@@ -74,11 +89,10 @@ export function PayPalEscrowCard({
           status: "AUTHORIZED",
           createdAt: new Date().toISOString(),
         };
-        setEscrow(initialRecord);
         localStorage.setItem(`proofpay_escrow_${jobId}`, JSON.stringify(initialRecord));
       }
     } catch (e) {
-      console.warn("Could not load escrow state from storage:", e);
+      console.warn("Could not sync escrow state:", e);
     }
   }, [jobId, budgetAmount, jobStatus]);
 
