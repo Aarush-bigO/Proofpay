@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PayPalEscrowCard } from "@/components/PayPalEscrowCard";
 import {
   Dialog,
   DialogContent,
@@ -281,6 +282,20 @@ export default function JobDetailPage() {
             </div>
           </div>
         </div>
+
+        {/* PayPal Milestone Escrow Vault */}
+        <PayPalEscrowCard
+          jobId={job.id}
+          jobTitle={job.title}
+          budgetAmount={job.budget.max}
+          jobStatus={job.status}
+          assignedWorkerName={assignedWorker?.name || "Contractor"}
+          posterName={job.posterName}
+          onStatusChange={(newStatus) => {
+            updateJob(job.id, { status: newStatus as any });
+            setJob((prev) => (prev ? { ...prev, status: newStatus as any } : null));
+          }}
+        />
 
         {/* Job Details */}
         <Card className="mb-4">

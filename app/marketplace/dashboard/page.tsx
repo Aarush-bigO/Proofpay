@@ -161,6 +161,36 @@ export default function DashboardPage() {
           </Link>
         )}
 
+        {/* PayPal Milestone Escrow Portfolio Overview */}
+        <Card className="mb-4 border border-blue-200 bg-gradient-to-r from-blue-900 to-[#003087] text-white shadow-sm overflow-hidden">
+          <CardContent className="p-4">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center font-black text-[11px] text-[#003087]">
+                  P
+                </div>
+                <span className="font-bold text-xs tracking-wider uppercase text-blue-200">
+                  PayPal Milestone Escrow Ledger
+                </span>
+              </div>
+              <Badge className="bg-[#0079C1] text-white text-[10px] border-0">
+                Sandbox Connected
+              </Badge>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 pt-1 border-t border-blue-800/80">
+              <div>
+                <p className="text-[11px] text-blue-200">Active Escrow Holds</p>
+                <p className="text-lg font-black text-white">$3,650.00 <span className="text-[10px] text-blue-300 font-normal">USD</span></p>
+              </div>
+              <div>
+                <p className="text-[11px] text-blue-200">AI-Released Captures</p>
+                <p className="text-lg font-black text-emerald-300">$2,450.00 <span className="text-[10px] text-emerald-200 font-normal">USD</span></p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Tabs */}
         <Tabs defaultValue="jobs">
           <TabsList className="w-full">
