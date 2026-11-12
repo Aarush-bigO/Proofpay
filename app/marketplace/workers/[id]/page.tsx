@@ -198,30 +198,22 @@ export default function WorkerProfilePage() {
         <Card className="mb-4">
           <CardContent>
             <div className="flex items-start gap-4">
-              {/* Big Compliance Score */}
-              <div
-                className={cn(
-                  "flex-shrink-0 w-20 h-20 rounded-2xl border-2 flex flex-col items-center justify-center",
-                  scoreBg(worker.complianceScore)
-                )}
-              >
-                <Shield
-                  className={cn(
-                    "w-5 h-5 mb-0.5",
-                    scoreColor(worker.complianceScore)
-                  )}
+              {/* Worker Photo + Score Badge */}
+              <div className="relative flex-shrink-0 w-20 h-20">
+                <img
+                  src={worker.avatarUrl || "/avatars/worker-1.jpg"}
+                  alt={worker.name}
+                  className="w-20 h-20 rounded-2xl object-cover border-2 border-slate-200 shadow-sm"
                 />
-                <span
+                <div
                   className={cn(
-                    "text-2xl font-bold leading-tight",
+                    "absolute -bottom-2 -right-1.5 px-2 py-0.5 rounded-full text-xs font-bold border flex items-center gap-1 shadow-md bg-white",
                     scoreColor(worker.complianceScore)
                   )}
                 >
+                  <Shield className="w-3 h-3 inline" />
                   {worker.complianceScore}
-                </span>
-                <span className="text-[9px] text-slate-400 font-medium">
-                  COMPLIANCE
-                </span>
+                </div>
               </div>
 
               <div className="flex-1 min-w-0">
@@ -483,7 +475,7 @@ export default function WorkerProfilePage() {
                   Location
                 </label>
                 <Input
-                  placeholder="e.g., San Jose, CA"
+                  placeholder="e.g., Indiranagar, Bengaluru, KA"
                   value={hireLocation}
                   onChange={(e) => setHireLocation(e.target.value)}
                   required

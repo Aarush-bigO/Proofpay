@@ -111,7 +111,7 @@ export default function AnalysisResults({
       <div className="flex justify-center">
         <Badge className="bg-slate-100 text-slate-600 text-xs gap-1">
           <MapPin className="w-3 h-3" />
-          San Jose, CA
+          Bengaluru, Karnataka
         </Badge>
       </div>
 

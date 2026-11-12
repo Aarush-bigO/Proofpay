@@ -110,12 +110,12 @@ const PANEL_IMAGES = [
 ];
 // Tall portrait images for worker hero (Hinge/Raya style)
 const WORKER_AVATARS = [
-  "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop&facepad=2",
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop&facepad=2",
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=750&fit=crop&facepad=2",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=750&fit=crop&facepad=2",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop&facepad=2",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=750&fit=crop&facepad=2",
+  "/avatars/worker-1.jpg",
+  "/avatars/worker-2.jpg",
+  "/avatars/worker-3.jpg",
+  "/avatars/worker-4.jpg",
+  "/avatars/worker-5.jpg",
+  "/avatars/worker-6.jpg",
 ];
 function pickImage(id: string, urls: string[]): string {
   const hash = id.split("").reduce((a, c) => a + c.charCodeAt(0), 0);

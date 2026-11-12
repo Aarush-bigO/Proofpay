@@ -33,7 +33,7 @@ const IMG = {
 export const KNOWLEDGE_CLIPS: KnowledgeClip[] = [
   {
     id: "clip-1",
-    expertName: "Mike Torres",
+    expertName: "Rajesh Sharma",
     expertYears: 32,
     trade: "electrical",
     taskType: "panel",
@@ -56,7 +56,7 @@ export const KNOWLEDGE_CLIPS: KnowledgeClip[] = [
   },
   {
     id: "clip-2",
-    expertName: "Sarah Chen",
+    expertName: "Priya Venkatesh",
     expertYears: 28,
     trade: "electrical",
     taskType: "outlet",
@@ -80,7 +80,7 @@ export const KNOWLEDGE_CLIPS: KnowledgeClip[] = [
   },
   {
     id: "clip-3",
-    expertName: "James Washington",
+    expertName: "Amitava Banerjee",
     expertYears: 35,
     trade: "electrical",
     taskType: "general",
@@ -104,7 +104,7 @@ export const KNOWLEDGE_CLIPS: KnowledgeClip[] = [
   },
   {
     id: "clip-4",
-    expertName: "Maria Rodriguez",
+    expertName: "Sunita Nair",
     expertYears: 24,
     trade: "electrical",
     taskType: "junction_box",
@@ -129,7 +129,7 @@ export const KNOWLEDGE_CLIPS: KnowledgeClip[] = [
   },
   {
     id: "clip-5",
-    expertName: "Robert Kim",
+    expertName: "Vikram Malhotra",
     expertYears: 30,
     trade: "electrical",
     taskType: "panel",

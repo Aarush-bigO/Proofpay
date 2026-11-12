@@ -6,10 +6,10 @@ import { UserProfile, Analysis, SkillScore, Violation, SkillDemo } from '@/lib/s
 
 export const DEMO_PROFILE: UserProfile = {
   id: 'demo-alex-smith',
-  fullName: 'Alex Smith',
+  fullName: 'Aarush Bharti',
   trade: 'electrical',
   experienceLevel: 'apprentice',
-  primaryJurisdiction: 'California',
+  primaryJurisdiction: 'Bengaluru, India',
   createdAt: '2025-09-15T08:00:00Z',
 };
 

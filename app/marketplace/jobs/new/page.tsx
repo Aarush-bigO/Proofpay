@@ -242,7 +242,7 @@ export default function NewJobPage() {
                   Your Name
                 </label>
                 <Input
-                  placeholder="e.g., John Smith"
+                  placeholder="e.g., Aarush Bharti"
                   value={posterName}
                   onChange={(e) => setPosterName(e.target.value)}
                   required
@@ -254,7 +254,7 @@ export default function NewJobPage() {
                   Job Title
                 </label>
                 <Input
-                  placeholder="e.g., 200A Panel Upgrade for 1960s Ranch"
+                  placeholder="e.g., 3-Phase Distribution Board Upgrade"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
@@ -298,7 +298,7 @@ export default function NewJobPage() {
                   Location
                 </label>
                 <Input
-                  placeholder="e.g., San Jose, CA"
+                  placeholder="e.g., Indiranagar, Bengaluru, KA"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   required

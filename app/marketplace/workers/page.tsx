@@ -222,26 +222,21 @@ export default function WorkersPage() {
                     <CardContent>
                       <div className="flex items-start gap-3">
                         {/* Avatar / Score */}
-                        <div
-                          className={cn(
-                            "flex-shrink-0 w-14 h-14 rounded-xl border-2 flex flex-col items-center justify-center",
-                            scoreBg(worker.complianceScore)
-                          )}
-                        >
-                          <Shield
-                            className={cn(
-                              "w-4 h-4",
-                              scoreColor(worker.complianceScore)
-                            )}
+                        <div className="relative flex-shrink-0 w-14 h-14">
+                          <img
+                            src={worker.avatarUrl || "/avatars/worker-1.jpg"}
+                            alt={worker.name}
+                            className="w-14 h-14 rounded-xl object-cover border border-slate-200 shadow-sm"
                           />
-                          <span
+                          <div
                             className={cn(
-                              "text-lg font-bold leading-tight",
+                              "absolute -bottom-1.5 -right-1.5 px-1 py-0.2 rounded-full text-[10px] font-bold border flex items-center gap-0.5 shadow-sm bg-white",
                               scoreColor(worker.complianceScore)
                             )}
                           >
+                            <Shield className="w-2.5 h-2.5 inline" />
                             {worker.complianceScore}
-                          </span>
+                          </div>
                         </div>
 
                         {/* Info */}

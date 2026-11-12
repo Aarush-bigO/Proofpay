@@ -5,7 +5,7 @@ const KEYS = {
   profile: 'proofpay_profile',
   analyses: 'proofpay_analyses',
   skillScores: 'proofpay_skill_scores',
-  demoLoaded: 'proofpay_demo_loaded',
+  demoLoaded: 'proofpay_demo_loaded_v2',
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -109,10 +109,10 @@ function write<T>(key: string, value: T): void {
 
 const DEFAULT_PROFILE: UserProfile = {
   id: 'demo-alex-smith',
-  fullName: 'Alex Smith',
+  fullName: 'Aarush Bharti',
   trade: 'electrical',
   experienceLevel: 'apprentice',
-  primaryJurisdiction: 'California',
+  primaryJurisdiction: 'Bengaluru, India',
   createdAt: '2025-09-15T08:00:00Z',
 };
 

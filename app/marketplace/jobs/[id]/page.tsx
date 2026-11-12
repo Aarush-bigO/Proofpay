@@ -134,6 +134,7 @@ export default function JobDetailPage() {
         jobHistory: w?.jobHistory || [],
         location: w?.location || "",
         bio: w?.bio || "",
+        avatarUrl: w?.avatarUrl || "/avatars/worker-1.jpg",
         createdAt: w?.createdAt || "",
         quote: a.quote,
         message: a.message,
@@ -414,7 +415,12 @@ export default function JobDetailPage() {
                     )}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2.5">
+                        <img
+                          src={aw.avatarUrl || "/avatars/worker-1.jpg"}
+                          alt={aw.name}
+                          className="w-8 h-8 rounded-full object-cover border border-slate-200"
+                        />
                         <Link
                           href={`/marketplace/workers/${aw.id}`}
                           className="font-medium text-sm text-blue-600 hover:underline"
@@ -471,8 +477,12 @@ export default function JobDetailPage() {
                   href={`/marketplace/workers/${assignedWorker.id}`}
                   className="flex items-center gap-3 p-3 rounded-lg border border-blue-200 bg-blue-50"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
-                    <User className="w-5 h-5 text-white" />
+                  <div className="relative w-11 h-11 rounded-lg overflow-hidden border border-slate-200 shrink-0">
+                    <img
+                      src={assignedWorker.avatarUrl || "/avatars/worker-1.jpg"}
+                      alt={assignedWorker.name}
+                      className="w-11 h-11 object-cover"
+                    />
                   </div>
                   <div className="flex-1">
                     <p className="font-medium text-sm text-slate-900">
