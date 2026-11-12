@@ -11,7 +11,7 @@ function getAnthropicClient(): Anthropic | null {
 export function getMockAnalysis(workType: string, userDescription: string): AnalysisResult {
   const formattedWork = (workType || 'electrical_panel').replace(/_/g, ' ');
   return {
-    description: `Visual inspection of ${formattedWork}: Completed wiring installation evaluated against NEC 2023 standards and California electrical amendments.`,
+    description: `Visual inspection of ${formattedWork}: Completed wiring installation evaluated against CEA electrical safety standards and regional discom regulations.`,
     is_compliant: true,
     compliance_score: 94,
     violations: [

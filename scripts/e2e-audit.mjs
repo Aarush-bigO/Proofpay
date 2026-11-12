@@ -130,7 +130,7 @@ async function runTests() {
         image: dummyBase64,
         workType: 'electrical_panel',
         userDescription: 'Completed 200A main service panel upgrade with dual ground rods.',
-        jurisdiction: 'California',
+        jurisdiction: 'Bengaluru, India',
       },
       validate: (data) => data.compliance_score >= 80 && Array.isArray(data.violations),
     },

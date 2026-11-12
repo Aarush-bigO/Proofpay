@@ -5,7 +5,7 @@ const KEYS = {
   profile: 'proofpay_profile',
   analyses: 'proofpay_analyses',
   skillScores: 'proofpay_skill_scores',
-  demoLoaded: 'proofpay_demo_loaded_v2',
+  demoLoaded: 'proofpay_demo_loaded_v3',
 } as const;
 
 // ---------------------------------------------------------------------------

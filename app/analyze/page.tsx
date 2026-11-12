@@ -56,7 +56,7 @@ export default function AnalyzePage() {
           afterImage,
           workType,
           userDescription: description,
-          jurisdiction: "California",
+          jurisdiction: "Bengaluru, India",
         }),
       });
 
@@ -73,7 +73,7 @@ export default function AnalyzePage() {
         userId: "demo-alex-smith",
         photoUrl: beforeImage,
         fixedPhotoUrl: afterImage,
-        jurisdiction: result.jurisdiction || "California",
+        jurisdiction: result.jurisdiction || "Bengaluru, India",
         trade: "electrical",
         workType: result.workType || workType,
         userDescription: description,
@@ -309,7 +309,7 @@ export default function AnalyzePage() {
                   Comparing before &amp; after...
                 </p>
                 <p className="text-xs text-blue-600 mt-1">
-                  Checking against NEC codes and California amendments
+                  Checking against CEA electrical safety codes and regional standards
                 </p>
               </CardContent>
             </Card>

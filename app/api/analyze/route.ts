@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
       afterImage,
       workType,
       userDescription,
-      jurisdiction = 'California',
+      jurisdiction = 'Bengaluru, India',
     } = body;
 
     if (!workType) {

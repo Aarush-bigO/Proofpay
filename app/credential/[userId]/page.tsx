@@ -81,8 +81,8 @@ export default function CredentialPage() {
       .filter((s) => s.score < 85)
       .map((s) => s.skillName);
 
-    // Qualified states (California + any with high match)
-    const qualifiedStates = ["California"];
+    // Qualified states (Karnataka + any with high match)
+    const qualifiedStates = ["Karnataka", "Maharashtra"];
 
     return {
       totalAnalyses,

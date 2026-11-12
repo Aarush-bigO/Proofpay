@@ -16,6 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 import {
   getJob,
+  getWorker,
   getMessages,
   saveMessage,
   generateId,
@@ -95,20 +96,10 @@ export default function MessageThreadPage() {
       senderId = job.posterId;
       senderName = job.posterName;
     } else {
-      // Use assigned worker or first applicant
       const workerId = job.assignedWorkerId || job.applicants[0]?.workerId || "unknown";
-      const workerApplicant = job.applicants.find((a) => a.workerId === workerId);
       senderId = workerId;
-      // Get worker name from demo data
-      const workerNames: Record<string, string> = {
-        "worker-maria-santos": "Maria Santos",
-        "worker-james-chen": "James Chen",
-        "worker-priya-patel": "Priya Patel",
-        "worker-derek-johnson": "Derek Johnson",
-        "worker-sarah-kim": "Sarah Kim",
-        "worker-marcus-rivera": "Marcus Rivera",
-      };
-      senderName = workerNames[workerId] || "Worker";
+      const foundWorker = getWorker(workerId) || DEMO_WORKERS.find((w) => w.id === workerId);
+      senderName = foundWorker?.name || "Contractor";
     }
 
     const msg: MarketplaceMessage = {

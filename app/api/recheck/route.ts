@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
       originalImage,
       fixedImage,
       originalViolations,
-      jurisdiction = 'California',
+      jurisdiction = 'Bengaluru, India',
       userDescription,
     } = body;
 

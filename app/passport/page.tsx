@@ -20,12 +20,12 @@ import {
   STATE_REQUIREMENTS,
 } from "@/lib/codes/state-requirements";
 
-const TARGET_STATES = ["Texas", "Arizona"];
+const TARGET_STATES = ["Maharashtra", "Delhi NCR", "Telangana", "Texas"];
 
 export default function PassportPage() {
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [skillScores, setSkillScores] = useState<SkillScore[]>([]);
-  const [targetState, setTargetState] = useState("Texas");
+  const [targetState, setTargetState] = useState("Maharashtra");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -64,8 +64,8 @@ export default function PassportPage() {
     );
   }
 
-  const currentState = profile?.primaryJurisdiction || "California";
-  const currentReqs = STATE_REQUIREMENTS[currentState];
+  const currentState = profile?.primaryJurisdiction || "Karnataka";
+  const currentReqs = STATE_REQUIREMENTS[currentState] || STATE_REQUIREMENTS["Karnataka"];
   const targetReqs = STATE_REQUIREMENTS[targetState];
 
   return (

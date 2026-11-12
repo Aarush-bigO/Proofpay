@@ -348,7 +348,9 @@ export default function ResultsPage() {
             </div>
             <Badge className="bg-slate-100 text-slate-500 text-xs gap-1">
               <MapPin className="w-3 h-3" />
-              {analysis.jurisdiction === "California"
+              {analysis.jurisdiction === "Bengaluru, India"
+                ? "Bengaluru, KA"
+                : analysis.jurisdiction === "California"
                 ? "CA"
                 : analysis.jurisdiction}
             </Badge>
@@ -559,7 +561,9 @@ export default function ResultsPage() {
           </div>
           <Badge className="bg-slate-100 text-slate-500 text-xs gap-1">
             <MapPin className="w-3 h-3" />
-            {analysis.jurisdiction === "California"
+            {analysis.jurisdiction === "Bengaluru, India"
+              ? "Bengaluru, KA"
+              : analysis.jurisdiction === "California"
               ? "CA"
               : analysis.jurisdiction}
           </Badge>
