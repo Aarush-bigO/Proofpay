@@ -17,6 +17,7 @@ import {
   Zap,
   ArrowRight,
   RotateCcw,
+  Sparkles,
 } from "lucide-react";
 
 interface PayPalEscrowCardProps {
@@ -208,8 +209,70 @@ export function PayPalEscrowCard({
     }
   };
 
+  // 5. Judge Fast-Forward Demo: 1-Click Complete Cycle
+  const handleRunFullCycleDemo = async () => {
+    setIsLoading(true);
+    try {
+      // Step A: Authorize
+      const authRes = await fetch("/api/escrow/authorize", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: budgetAmount,
+          jobId,
+          jobTitle,
+          currency: "USD",
+        }),
+      });
+      const authData = await authRes.json();
+      const currentAuthId = authData.authorizationId || `AUTH-PP-SANDBOX-${jobId.slice(0, 6).toUpperCase()}`;
+
+      // Step B: Auto Capture with AI 94% Certification
+      const capRes = await fetch("/api/escrow/capture", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          authorizationId: currentAuthId,
+          amount: budgetAmount,
+          currency: "USD",
+        }),
+      });
+      const capData = await capRes.json();
+
+      const completeRecord: EscrowRecord = {
+        orderId: authData.orderId || `8X77492${jobId.replace(/\D/g, "").slice(0, 4) || "01"}`,
+        authorizationId: currentAuthId,
+        amount: budgetAmount,
+        currency: "USD",
+        status: "CAPTURED",
+        createdAt: authData.createdAt || new Date().toISOString(),
+        captureId: capData.captureId,
+        capturedAt: capData.capturedAt,
+        fee: capData.fee,
+        netPayout: capData.netPayout,
+        aiScore: 94,
+      };
+
+      saveEscrowState(completeRecord);
+      if (onStatusChange) onStatusChange("completed");
+    } catch (err) {
+      console.error("Fast cycle demo error:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Determine active pipeline step
+  const activeStep = !escrow || escrow.status === "VOIDED"
+    ? 1
+    : escrow.status === "AUTHORIZED" && !escrow.aiScore
+      ? 2
+      : escrow.status === "AUTHORIZED" && Boolean(escrow.aiScore)
+        ? 3
+        : 4;
+
   return (
-    <Card className="mb-4 border-2 border-blue-600/30 shadow-md bg-gradient-to-br from-white via-slate-50 to-blue-50/20 overflow-hidden">
+    <Card className="mb-4 border-2 border-[#0070BA]/30 shadow-md bg-white overflow-hidden">
       {/* Top Banner with PayPal FinTech Badge */}
       <div className="bg-[#003087] px-4 py-2.5 flex items-center justify-between text-white">
         <div className="flex items-center gap-2">
@@ -224,6 +287,24 @@ export function PayPalEscrowCard({
         <Badge className="bg-[#0079C1] hover:bg-[#0079C1] text-white text-[10px] font-semibold tracking-wider uppercase border-0">
           Orders v2 Sandbox
         </Badge>
+      </div>
+
+      {/* 4-Step Visual Progress Stepper */}
+      <div className="bg-slate-50 border-b border-slate-200 px-3 py-2">
+        <div className="grid grid-cols-4 gap-1 text-center text-[10px]">
+          <div className={`py-1 rounded font-bold transition-colors ${activeStep === 1 ? "bg-blue-100 text-[#003087]" : activeStep > 1 ? "text-emerald-700 font-semibold" : "text-slate-400"}`}>
+            1. Authorize
+          </div>
+          <div className={`py-1 rounded font-bold transition-colors ${activeStep === 2 ? "bg-blue-100 text-[#003087]" : activeStep > 2 ? "text-emerald-700 font-semibold" : "text-slate-400"}`}>
+            2. Escrow Hold
+          </div>
+          <div className={`py-1 rounded font-bold transition-colors ${activeStep === 3 ? "bg-amber-100 text-amber-900" : activeStep > 3 ? "text-emerald-700 font-semibold" : "text-slate-400"}`}>
+            3. AI Inspection
+          </div>
+          <div className={`py-1 rounded font-bold transition-colors ${activeStep === 4 ? "bg-emerald-100 text-emerald-800" : "text-slate-400"}`}>
+            4. Capture Payout
+          </div>
+        </div>
       </div>
 
       <CardContent className="p-4 space-y-4">
@@ -247,6 +328,16 @@ export function PayPalEscrowCard({
               <Lock className="w-4 h-4 text-[#003087]" />
               {isLoading ? "Connecting to PayPal Sandbox..." : `Authorize $${budgetAmount.toLocaleString()} Escrow Deposit with PayPal`}
             </Button>
+
+            {/* Quick 1-Click Fast-Forward for Judges */}
+            <button
+              onClick={handleRunFullCycleDemo}
+              disabled={isLoading}
+              className="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg flex items-center justify-center gap-1.5 transition-colors border border-slate-200"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+              <span>Judge Fast-Forward: Run Full Escrow Cycle in 1 Click</span>
+            </button>
           </div>
         )}
 
@@ -408,12 +499,21 @@ export function PayPalEscrowCard({
               </div>
             </div>
 
-            <Link href="/results/demo-analysis-15" className="block">
-              <Button variant="outline" size="sm" className="w-full text-xs gap-1.5 border-slate-300 text-slate-700">
-                <ExternalLink className="w-3.5 h-3.5" />
-                View Cryptographic Proof Dossier & Certificate
-              </Button>
-            </Link>
+            <div className="space-y-2">
+              <Link href="/results/demo-analysis-1" className="block">
+                <Button variant="outline" size="sm" className="w-full text-xs gap-1.5 border-slate-300 text-slate-700">
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  View Cryptographic Proof Dossier & Certificate
+                </Button>
+              </Link>
+
+              <button
+                onClick={() => saveEscrowState(null)}
+                className="w-full text-center text-[11px] text-slate-500 hover:text-slate-700 py-1"
+              >
+                Reset Demo to Test Again
+              </button>
+            </div>
           </div>
         )}
 
