@@ -158,8 +158,24 @@ export default function WorkerProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-slate-400">Loading...</div>
+      <div className="min-h-screen bg-slate-50 pb-24">
+        <div className="max-w-lg mx-auto px-4 pt-6 space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-slate-200/80 animate-pulse" />
+            <div className="h-6 w-44 bg-slate-200/80 rounded-lg animate-pulse" />
+          </div>
+          {/* Skeleton Profile Card */}
+          <div className="rounded-2xl bg-white border border-slate-200/80 p-5 space-y-4 shadow-xs">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 rounded-full bg-slate-200 animate-pulse" />
+              <div className="space-y-2 flex-1">
+                <div className="h-5 w-36 bg-slate-200 rounded animate-pulse" />
+                <div className="h-3 w-28 bg-slate-100 rounded animate-pulse" />
+              </div>
+            </div>
+            <div className="h-10 w-full bg-slate-100 rounded-xl animate-pulse" />
+          </div>
+        </div>
       </div>
     );
   }

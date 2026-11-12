@@ -287,8 +287,23 @@ export default function ResultsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+      <div className="min-h-screen bg-slate-50 pb-20">
+        <div className="max-w-lg mx-auto px-4 pt-6 space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="h-5 w-24 bg-slate-200/80 rounded animate-pulse" />
+            <div className="h-6 w-20 bg-slate-200/80 rounded-full animate-pulse" />
+          </div>
+          <div className="h-56 rounded-2xl bg-white border border-slate-200/80 p-5 space-y-4 shadow-xs">
+            <div className="h-8 w-44 bg-slate-200/80 rounded-lg animate-pulse" />
+            <div className="h-4 w-32 bg-slate-100 rounded animate-pulse" />
+            <div className="h-28 w-full bg-slate-100/70 rounded-xl animate-pulse" />
+          </div>
+          <div className="h-40 rounded-2xl bg-white border border-slate-200/80 p-5 space-y-3 shadow-xs">
+            <div className="h-5 w-36 bg-slate-200/80 rounded animate-pulse" />
+            <div className="h-4 w-full bg-slate-100 rounded animate-pulse" />
+            <div className="h-4 w-5/6 bg-slate-100 rounded animate-pulse" />
+          </div>
+        </div>
       </div>
     );
   }

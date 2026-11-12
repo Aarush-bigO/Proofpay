@@ -48,7 +48,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.875rem;
   --background: #F8FAFC;
   --foreground: #0F172A;
   --card: #FFFFFF;
@@ -80,6 +80,14 @@
   --sidebar-accent-foreground: #0F172A;
   --sidebar-border: #E2E8F0;
   --sidebar-ring: #0070BA;
+
+  /* Apple-Grade Spring Curves & Diffused Shadows */
+  --apple-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --apple-spring-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --apple-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+  --apple-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+  --apple-shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  --apple-shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
 }
 
 .dark {
@@ -119,18 +127,46 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    -webkit-tap-highlight-color: transparent;
   }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    font-variant-numeric: tabular-nums;
+    overscroll-behavior-y: none;
+  }
+
+  /* Tactile Native Tap Responsiveness (Apple Feel) */
+  button, 
+  a, 
+  [role="button"] {
+    touch-action: manipulation;
+    transition: transform 0.2s var(--apple-spring), 
+                box-shadow 0.2s var(--apple-spring), 
+                background-color 0.15s ease,
+                color 0.15s ease;
+  }
+
+  button:active, 
+  a:active, 
+  [role="button"]:active {
+    transform: scale(0.978);
   }
 }
 
 /* ==========================================================================
-   PAYPAL FINTECH DESIGN SYSTEM (High-Trust Institutional Palette)
+   APPLE-GRADE FINTECH DESIGN SYSTEM (Silky Micro-Interactions & Vibrancy)
    ========================================================================== */
 
-/* PayPal Brand Accents & Button Refinement */
+/* PayPal Brand Accents */
 .bg-blue-600 {
   background-color: #0070BA !important;
   color: #FFFFFF !important;
@@ -160,7 +196,7 @@
   background-color: #F0F7FF !important;
 }
 
-/* Clean High-Trust Cards & Elevation */
+/* Precision Apple Cards with Diffused Specular Shadows */
 .bg-white {
   background-color: #FFFFFF !important;
 }
@@ -182,9 +218,20 @@ input, textarea, select {
   background-color: #FFFFFF !important;
   border-color: #CBD5E1 !important;
   color: #0F172A !important;
+  border-radius: 0.75rem !important;
+  transition: border-color 0.2s var(--apple-spring), box-shadow 0.2s var(--apple-spring) !important;
 }
 
 input:focus, textarea:focus, select:focus {
   border-color: #0070BA !important;
   outline-color: #0070BA !important;
+  box-shadow: 0 0 0 3px rgba(0, 112, 186, 0.15) !important;
+}
+
+/* Frosted Glass Vibrancy Utility */
+.apple-glass {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-color: rgba(226, 232, 240, 0.7) !important;
 }

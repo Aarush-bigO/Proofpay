@@ -118,8 +118,28 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-slate-400">Loading...</div>
+      <div className="min-h-screen bg-slate-50 pb-24">
+        <div className="max-w-lg mx-auto px-4 pt-6 space-y-4">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-9 h-9 rounded-xl bg-slate-200/80 animate-pulse" />
+            <div className="h-6 w-48 bg-slate-200/80 rounded-lg animate-pulse" />
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="h-20 rounded-2xl bg-white border border-slate-200/80 p-4 space-y-2">
+              <div className="h-4 w-16 bg-slate-200 rounded animate-pulse" />
+              <div className="h-6 w-10 bg-slate-200 rounded animate-pulse" />
+            </div>
+            <div className="h-20 rounded-2xl bg-white border border-slate-200/80 p-4 space-y-2">
+              <div className="h-4 w-16 bg-slate-200 rounded animate-pulse" />
+              <div className="h-6 w-10 bg-slate-200 rounded animate-pulse" />
+            </div>
+          </div>
+          <div className="rounded-2xl bg-white border border-slate-200/80 p-5 space-y-3">
+            <div className="h-5 w-32 bg-slate-200 rounded animate-pulse" />
+            <div className="h-16 w-full bg-slate-100 rounded-xl animate-pulse" />
+            <div className="h-16 w-full bg-slate-100 rounded-xl animate-pulse" />
+          </div>
+        </div>
       </div>
     );
   }
