@@ -8,25 +8,44 @@
  * so hackathon judges can test the full financial workflow seamlessly on any device.
  */
 
+/**
+ * Credentials structure for authenticating with the PayPal Sandbox REST gateway.
+ */
 export interface PayPalAuthCredentials {
   clientId?: string;
   clientSecret?: string;
   apiUrl: string;
 }
 
+/**
+ * Deterministic record representing a milestone-based escrow hold on PayPal.
+ */
 export interface EscrowHoldData {
+  /** Unique PayPal Order Identifier (e.g. 8X7749204) */
   orderId: string;
+  /** Authorization ID representing locked escrow funds (e.g. AUTH-PP-...) */
   authorizationId: string;
+  /** Total transaction gross amount in primary currency units */
   amount: number;
+  /** Standard 3-letter ISO-4217 currency code (default: USD) */
   currency: string;
+  /** Current lifecycle status within the ProofPay finite state machine */
   status: 'PENDING' | 'AUTHORIZED' | 'CAPTURED' | 'VOIDED';
+  /** ISO-8601 creation timestamp */
   createdAt: string;
+  /** ProofPay marketplace job reference */
   jobId: string;
+  /** Human-readable job title */
   jobTitle: string;
+  /** PayPal Payments v2 Capture ID once payout is disbursed */
   captureId?: string;
+  /** Capture execution timestamp */
   capturedAt?: string;
+  /** Void execution timestamp if disputed/cancelled */
   voidedAt?: string;
+  /** Standard PayPal processing fee (2.9% + $0.30) */
   fee?: number;
+  /** Net proceeds disbursed to contractor's balance */
   netPayout?: number;
 }
 
